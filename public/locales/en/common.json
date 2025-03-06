@@ -1,0 +1,151 @@
+{
+  "chat_title": "How can I help you?",
+  "no_messages": "No messages yet. Type your medical query here.",
+  "placeholder": "Ask me about symptoms, treatments, or diagnoses...",
+  "new_consultation": "New Medical Consultation",
+  "chat_history": "Chat History",
+  "no_recent_chats": "No recent Medical Consultations.",
+  "edit_name": "Edit name",
+  "delete_chat": "Delete chat",
+  "settings_button": "Settings",
+  "consultation": "Medical Consultation",
+      "listening": "Listening...",
+      
+        "home": {
+          "title": "BratScope",
+          "description": "An AI-driven experimental model for early detection of brain tumors through MRI analysis.",
+          "steps": {
+            "upload": {
+              "title": "Upload MRI Scan",
+              "desc": "Submit a high-resolution MRI scan of the brain for analysis."
+            },
+            "analysis": {
+              "title": "AI-Powered Detection",
+              "desc": "Our deep learning model examines the scan for potential tumor indicators."
+            },
+            "results": {
+              "title": "Analytical Insights",
+              "desc": "Receive a probability score and preliminary insights from the AI model."
+            }
+          },
+          "upload_button": "Upload MRI Scan"
+        }
+      ,
+      
+      
+        "navbar": {
+          "home": "Home",
+          "about": "About",
+          "contact": "Contact",
+          "start_analysis": "Start Analysis",
+          "language": "Language"
+        }
+      ,
+      
+        "footer": {
+          "description": "AI-powered brain tumor detection through MRI analysis.",
+          "disclaimer": "This tool does not replace medical diagnosis.",
+          "rights": "All rights reserved.",
+          "made_by": "Made by"
+        },
+        
+          "upload": {
+            "title": "BratScope MRI Analysis",
+            "description": "Upload an MRI scan or capture one with your camera. Our AI will analyze it for potential brain tumor indicators.",
+            "analyze_button": "Analyze MRI Scan",
+            "analyzing": "Analyzing scan..."
+          }
+,        
+
+  "dataset": {
+    "title": "Dataset & AI Model",
+    "description": "BratScope utilizes the BraTS 2021 dataset, a collection of MRI scans for brain tumor segmentation research.",
+    "overview": {
+      "title": "Dataset Overview",
+      "name": "Name:",
+      "images": "Number of MRI Scans:",
+      "patients": "Number of Patients:",
+      "license": "License:"
+    },
+    "model": {
+      "title": "AI Model",
+      "description": "The model is based on 3D U-Net and has been optimized with advanced preprocessing and transfer learning."
+    }
+  },
+  "github": {
+    "title": "GitHub Repository",
+    "description": "Access the source code, scripts, and documentation. Feel free to explore or contribute.",
+    "button": "View on GitHub"
+  }
+,
+
+  "contact": {
+    "title": "Get in Touch",
+    "description": "If you have any inquiries or would like to collaborate, feel free to reach out via WhatsApp, email, or connect through GitHub and LinkedIn.",
+    "form": {
+      "title": "Send a Message",
+      "name_placeholder": "Your Name",
+      "message_placeholder": "Your Message",
+      "button": "Send via WhatsApp",
+      "error": "Please fill in both fields before sending."
+    }
+  },
+
+    
+      "uploaddicom": {
+        "title": "Upload MRI Scan",
+        "description": "Upload an MRI scan in NIfTI (.nii, .nii.gz) or DICOM (.dcm) format. The AI model will analyze it.",
+        "drag_drop": "Drag & drop an MRI scan (.nii, .nii.gz, .dcm) or click to select",
+        "invalid_file": "Invalid file type. Please upload a NIfTI (.nii, .nii.gz) or DICOM (.dcm) file.",
+        "invalid_nifti": "Invalid NIfTI file. Please check the format.",
+        "nifti_preview": "NIfTI Metadata",
+        "dimensions": "Dimensions:",
+        "voxel_size": "Voxel Size:",
+        "loading_preview": "Loading preview...",
+        "analyze_button": "Analyze MRI Scan",
+        "analyzing": "Analyzing scan..."
+      }
+    
+    
+  
+  
+,  
+
+  "about": {
+    "title": "About BratScope",
+    "image_alt": "MRI scan representing AI brain tumor detection",
+    "description_1": "This AI-powered project focuses on analyzing MRI scans to assist in brain tumor research.",
+    "description_2": "Using deep learning, the system identifies patterns that may contribute to advancements in radiology and neuroscience.",
+    "disclaimer": "This system is not a diagnostic tool. Consult a medical professional for health concerns."
+  },
+  "status": {
+    "research": {
+      "title": "Ongoing Research",
+      "desc": "This project is in continuous development, improving AI accuracy."
+    },
+    "analysis": {
+      "title": "AI-Assisted Analysis",
+      "desc": "BratScope explores AI's role in brain imaging but is not a medical device."
+    },
+    "experimental": {
+      "title": "Experimental Model",
+      "desc": "Still under testing. Not for clinical use. Consult a doctor for any symptoms."
+    },
+    "consultation": {
+      "title": "Professional Consultation",
+      "desc": "For an accurate diagnosis, seek a certified medical professional."
+    }
+  }
+,
+      
+  "settings": {
+    "title": "Settings",
+    "user_mode": "User Mode",
+    "dark_mode": "Dark Mode",
+    "language": "Language",
+    "clear_history": "Clear all Medical Consultation"
+  },
+
+  "patient_mode": "Patient",
+  "doctor_mode": "Doctor"
+}

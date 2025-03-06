@@ -1,0 +1,28 @@
+{
+  "chat_title": "¿En qué puedo ayudarte?",
+  "no_messages": "No hay mensajes aún. Escribe tu consulta médica aquí.",
+  "placeholder": "Escriba o usa el micrófono...",
+  "new_consultation": "Nueva Consulta",
+  "chat_history": "Historial de Consultas",
+  "no_recent_chats": "No hay consultas recientes.",
+  "edit_name": "Editar nombre",
+  "delete_chat": "Eliminar chat",
+  "settings_button": "Configuración",
+  "consultation": "Consulta",
+    "listening": "Escuchando...",
+
+
+  "settings": {
+    "title": "Configuración",
+    "user_mode": "Modo de Usuario",
+    "dark_mode": "Modo Oscuro",
+    "language": "Idioma",
+    "clear_history": "Borrar todas las consultas"
+
+  },
+  
+    "patient_mode": "Paciente",
+    "doctor_mode": "Médico"
+    
+  
+}

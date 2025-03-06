@@ -1,0 +1,25 @@
+{
+  "chat_title": "Wie kann ich Ihnen helfen?",
+  "no_messages": "Noch keine Nachrichten. Stellen Sie hier Ihre medizinische Frage.",
+  "placeholder": "Fragen Sie mich nach Symptomen, Behandlungen oder Diagnosen...",
+  "new_consultation": "Neue medizinische Beratung",
+  "chat_history": "Chat-Verlauf",
+  "no_recent_chats": "Keine aktuellen medizinischen Beratungen.",
+  "edit_name": "Namen bearbeiten",
+  "delete_chat": "Chat löschen",
+  "settings_button": "Einstellungen",
+  "consultation": "Medizinische Beratung",
+      "listening": "Zuhören...",
+
+
+  "settings": {
+    "title": "Einstellungen",
+    "user_mode": "Benutzermodus",
+    "dark_mode": "Dunkelmodus",
+    "language": "Sprache",
+    "clear_history": "Alle medizinischen Beratungen löschen"
+  },
+
+  "patient_mode": "Patient",
+  "doctor_mode": "Arzt"
+}

@@ -1,0 +1,98 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Cliente {
+  id                  String      @id @default(auto()) @map("_id") @db.ObjectId
+  nombre              String
+  correoElectronico   String      @unique
+  telefono            String?
+  rfc                 String?     // Registro Federal de Contribuyentes
+  direccionFacturacion Direccion  @relation("DireccionFacturacion", fields: [direccionFacturacionId], references: [id])
+  direccionEnvio      Direccion?  @relation("DireccionEnvio", fields: [direccionEnvioId], references: [id])
+  direccionFacturacionId String   @db.ObjectId @unique
+  direccionEnvioId    String?     @db.ObjectId @unique
+  facturas            Factura[]
+  creadoEn            DateTime    @default(now())
+  actualizadoEn       DateTime    @updatedAt
+}
+
+model Direccion {
+  id         String     @id @default(auto()) @map("_id") @db.ObjectId
+  calle      String
+  ciudad     String
+  estado     String
+  codigoPostal String
+  pais       String
+  clienteFacturacion Cliente? @relation("DireccionFacturacion")
+  clienteEnvio       Cliente? @relation("DireccionEnvio")
+  creadoEn   DateTime   @default(now())
+  actualizadoEn DateTime @updatedAt
+}
+
+model Producto {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  nombre      String
+  sku         String        @unique // Código único del producto
+  descripcion String?
+  precio      Float
+  inventario  Int           @default(0)
+  categoria   Categoria     @relation(fields: [categoriaId], references: [id])
+  categoriaId String        @db.ObjectId
+  itemsFactura ItemFactura[] // Relación con items de factura
+  creadoEn    DateTime      @default(now())
+  actualizadoEn DateTime    @updatedAt
+}
+
+model Categoria {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  nombre      String     @unique
+  descripcion String?
+  productos   Producto[]
+  creadoEn    DateTime   @default(now())
+  actualizadoEn DateTime @updatedAt
+}
+
+model Factura {
+  id              String        @id @default(auto()) @map("_id") @db.ObjectId
+  clienteId       String        @db.ObjectId
+  cliente         Cliente       @relation(fields: [clienteId], references: [id])
+  items           ItemFactura[]
+  subtotal        Float         // Total sin impuestos
+  impuestos       Float         // IVA u otros impuestos
+  descuento       Float?        // Descuento aplicado
+  total           Float         // Total final
+  estatus         EstatusFactura @default(PENDIENTE) // Estatus de la factura
+  metodoPago      MetodoPago    // Método de pago
+  creadoEn        DateTime      @default(now())
+  actualizadoEn   DateTime      @updatedAt
+}
+
+model ItemFactura {
+  id         String     @id @default(auto()) @map("_id") @db.ObjectId
+  facturaId  String     @db.ObjectId
+  factura    Factura    @relation(fields: [facturaId], references: [id])
+  productoId String     @db.ObjectId
+  producto   Producto   @relation(fields: [productoId], references: [id])
+  cantidad   Int
+  precioUnitario Float
+  precioTotal Float // Calculado: cantidad * precioUnitario
+}
+
+enum EstatusFactura {
+  PENDIENTE
+  PAGADA
+  CANCELADA
+}
+
+enum MetodoPago {
+  EFECTIVO
+  TARJETA_CREDITO
+  TRANSFERENCIA
+  OTRO
+}

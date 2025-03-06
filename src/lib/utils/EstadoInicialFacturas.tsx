@@ -1,0 +1,107 @@
+export const EstadoInicialFacturas = {
+  emisor: {
+    razonSocial: "Kevin Guerra Xochihua",
+    direccion: "Calle Reforma #123, Colonia Centro, CDMX, México",
+    telefono: "+52 55 1234 5678",
+    correo: "kevin.guerra@example.com",
+    rfc: "KGX123456789",
+    regimenFiscal: "601",
+    codigoPostalEmisor: "06000",
+  },
+  receptor: {
+    nombreCliente: "Birgit Wagner",
+    rfcCliente: "WBH212009",
+    direccionCliente: "Klein 3",
+    correoCliente: "wagner@gmx.de",
+    usoCFDI: "G03",
+    codigoPostalCliente: "69509",
+    regimenFiscalCliente: "",
+    observacionesCliente: "Gracias por su preferencia. Esta factura es válida por 30 días.",
+  },
+  generales: {
+    descripcion: "Consultoría en desarrollo de software",
+    subtotal: "50000.00",
+    tasaIVA: "16%",
+    montoIVA: "8000.00",
+    total: "58000.00",
+    totalConLetra: "Cincuenta y ocho mil pesos 00/100 MXN",
+    descuento: "0.00",
+    moneda: "MXN",
+    condicionesPago: "Contado",
+    formaPago: "03",
+    formaPagoDescripcion: "Transferencia Electrónica",
+    metodoPago: "PUE",
+    metodoPagoDescripcion: "Pago en una sola exhibición",
+    usoCFDI: "G03",
+    usoCFDIDescripcion: "Gastos en general",
+    tipoComprobante: "I",
+    numeroFactura: "12345",
+    serie: "A",
+    fechaEmision: "2024-12-19",
+    lugarExpedicion: "06000",
+    observaciones: "Sin observaciones adicionales.",
+  },
+  conceptos: [
+    {
+      cantidad: 1,
+      unidad: "Servicio",
+      descripcion: "Consultoría en desarrollo de software",
+      precioUnitario: "50000.00",
+      total: "50000.00",
+      claveProdServ: "84111506",
+      claveUnidad: "E48",
+    },
+  ],
+  impuestos: {
+    trasladados: [
+      {
+        impuesto: "002",
+        tasa: "16.00",
+        importe: "8000.00",
+      },
+    ],
+    retenciones: [
+      {
+        impuesto: "001",
+        importe: "1000.00",
+      },
+    ],
+    totalImpuestosTrasladados: "8000.00",
+    totalImpuestosRetenidos: "1000.00",
+  },
+  complementosPago: [
+    {
+      fechaPago: "2024-12-20",
+      montoPago: "58000.00",
+      formaPago: "03",
+      numeroOperacion: "12345678",
+      rfcBancoEmisor: "ABC123456T78",
+      cuentaBancoReceptora: "123456789",
+      moneda: "MXN",
+      tipoCambio: "1.0",
+    },
+  ],
+  adicionales: {
+    cfdisRelacionados: [
+      {
+        tipoRelacion: "01",
+        uuidRelacionado: "AAAA-BBBB-CCCC-DDDD-EEEE",
+      },
+    ],
+    notasAdicionales: "Este CFDI tiene una vigencia de 30 días naturales.",
+  },
+  timbrado: {
+    uuid: "XXXX-XXXX-XXXX-XXXX-XXXX",
+    estado: "timbrado",
+    fechaHoraTimbrado: "2024-12-19T12:34:56",
+    fechaCancelacion: "",
+  },
+  sat: {
+    uuid: "XXXX-XXXX-XXXX-XXXX-XXXX", // <--- Agregado aquí
+    numeroCertificado: "00001000000403258748",
+    selloCFDI: "SELO_DIGITAL_CFDI",
+    selloSAT: "SELO_DIGITAL_SAT",
+    datosQR: "?re=KGX123456789&rr=&tt=58000.00&id=XXXX-XXXX-XXXX-XXXX-XXXX",
+    folioFiscalSAT: "XXXXXXXXXX",
+  },
+};
