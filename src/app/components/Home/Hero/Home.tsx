@@ -22,7 +22,7 @@ export default function Home() {
         {/* Título profesional */}
         <h1 className="text-5xl md:text-7xl font-bold leading-tight text-gray-900 dark:text-white">
           <span className="bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-500 dark:to-blue-300 text-transparent bg-clip-text">
-            {t("home.title")}
+          MedicalScope
           </span>
         </h1>
 
@@ -66,7 +66,7 @@ export default function Home() {
       </section>
 
       {/* Llamado a la acción */}
-      <Link href="/upload">
+      <Link href="/tools">
         <Button className="mt-10 mb-20 md:mb-4 px-8 py-4 text-xl font-medium bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600 rounded-full shadow-lg transition transform hover:scale-105">
           {t("home.upload_button")}
         </Button>

@@ -1,9 +1,9 @@
 "use client";
 
-import AboutHeroSection from "../components/About/AboutHeroSection";
-import ProjectStatus from "../components/About/ProjectStatus";
-import DatasetInfo from "../components/About/DatasetInfo";
-import GitHubSection from "../components/About/GitHubSection";
+import AboutHeroSection from "./components/AboutHeroSection";
+import ProjectStatus from "./components/ProjectStatus";
+import DatasetInfo from "./components/DatasetInfo";
+import GitHubSection from "./components/GitHubSection";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Home/Footer/Footer";
 

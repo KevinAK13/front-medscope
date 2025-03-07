@@ -19,17 +19,17 @@ export default function UploadDropzone({ onDrop }: UploadDropzoneProps) {
       if (acceptedFiles.length > 0) {
         const file = acceptedFiles[0];
 
-        // ✅ Solo aceptar archivos NIfTI (.nii, .nii.gz)
-        if (file.name.endsWith(".nii") || file.name.endsWith(".nii.gz")) {
+        // ✅ Solo aceptar imágenes (png, jpg, jpeg, gif, bmp, webp)
+        if (file.type.startsWith("image/")) {
           setError(null);
           onDrop(file);
         } else {
-          setError(t("upload.invalid_file"));
+          setError(t("upload.invalid_file") || "❌ Invalid file type. Please upload an image.");
         }
       }
     },
     accept: {
-      "application/nii": [".nii", ".nii.gz"],
+      "image/*": [".png", ".jpg", ".jpeg", ".gif", ".bmp", ".webp"],
     },
     maxFiles: 1,
   });
@@ -47,7 +47,7 @@ export default function UploadDropzone({ onDrop }: UploadDropzoneProps) {
       <div className="flex flex-col items-center justify-center text-center">
         <UploadCloud className="w-12 h-12 text-gray-500 dark:text-gray-300" />
         <p className="mt-2 text-gray-600 dark:text-gray-400">
-          {t("upload.drag_drop")}
+          {t("upload.drag_drop") || "Drag & drop an image file (PNG, JPG, JPEG, GIF, BMP, WebP) or click to upload."}
         </p>
       </div>
 

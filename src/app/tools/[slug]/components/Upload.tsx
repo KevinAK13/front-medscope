@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import UploadDropzone from "./UploadDropzone";
-import MedicalViewer from "./MedicalViewer";
+import MedicalViewer from "../../../components/Upload/MedicalViewer";
 
 export default function UploadPage() {
   const [file, setFile] = useState<File | null>(null);

@@ -1,80 +1,100 @@
-### 🔥 **Plan de Acción para el Simulador de Riesgo de Cáncer (4 días, 12h/día)**  
-
-Vamos a dividir el proyecto en tareas bien definidas para que puedas ejecutarlo de forma intensiva y eficiente.  
+Sí, podemos hacerlo con este dataset **COVID-19 CHEST X-RAY DATABASE**. Es un dataset sólido que ya ha sido utilizado en investigación médica para entrenar modelos de IA en la detección de enfermedades pulmonares.
 
 ---
 
-## **🗓️ Día 1: Data Preprocessing & Model Training** (12h)  
+# 🚀 **Plan de Desarrollo Express: Clasificador de Rayos X para Neumonía**
+**Tiempo estimado: 3-4 días en modo hackathon** 🔥
 
-📌 **Objetivo:**  
-- Procesar los datasets **PLCO y Framingham Study**  
-- Entrenar un modelo de **predicción de riesgo de cáncer**  
+## 📌 **Objetivo**
+Desarrollar un **sistema de IA que analiza radiografías de tórax** y clasifica entre:  
+✅ **Sano**  
+✅ **Neumonía Viral**  
+✅ **Neumonía Bacteriana**  
+✅ **COVID-19**  
 
-✅ **Tareas:**  
-- **Descargar y limpiar los datasets**  
-  - Normalizar los datos (edad, tabaquismo, IMC, antecedentes familiares, etc.)  
-  - Manejo de valores nulos y outliers  
-  - Transformar variables categóricas en numéricas  
-- **Entrenar el modelo base**  
-  - Opción 1: **Regresión Logística** (rápido y fácil de interpretar)  
-  - Opción 2: **Red Neuronal (MLPClassifier)** (más preciso, pero más complejo)  
-- **Evaluación inicial del modelo**  
-  - Métricas: **ROC-AUC, Precision-Recall, F1-score**  
-- **Guardar el modelo entrenado** en formato `.pkl` o `.onnx`  
+Con una interfaz web para que los usuarios suban imágenes y obtengan una predicción con **Grad-CAM** para mayor interpretabilidad.
 
 ---
 
-## **🗓️ Día 2: Backend API con FastAPI** (12h)  
+## **📅 Día 1: Preprocesamiento y Entrenamiento del Modelo (Backend + ML)**
+🎯 **Objetivo:** Preparar dataset, entrenar un modelo CNN y exponer API con FastAPI.
 
-📌 **Objetivo:**  
-- Construir una API en **FastAPI** para que el frontend pueda consultar el modelo.  
+### **1️⃣. Descargar y procesar el dataset**  
+- Dataset: **COVID-19 CHEST X-RAY DATABASE**  
+- **Dividir en clases:** Sano, Neumonía Viral, Neumonía Bacteriana, COVID-19  
+- **Tareas de procesamiento:**  
+  ✅ Redimensionar imágenes a **299x299 px**  
+  ✅ Convertir a escala de grises o mantener en RGB  
+  ✅ Data Augmentation (rotaciones, flips, escalado)  
+  ✅ Normalización de píxeles  
+  ✅ Dividir en **Train (80%) / Test (20%)**  
 
-✅ **Tareas:**  
-- **Configurar FastAPI** con endpoints:  
-  - `POST /predict` → Recibe datos de usuario y devuelve la probabilidad de cáncer  
-  - `GET /health` → Para verificar que la API está corriendo  
-- **Cargar el modelo entrenado en la API**  
-- **Implementar validaciones de entrada** con **Pydantic**  
-- **Testear la API con Postman o cURL**  
-- **Dockerizar la API** para facilitar el despliegue  
+### **2️⃣. Entrenar modelo CNN con TensorFlow/Keras**  
+- Arquitectura basada en **EfficientNetB0** o **VGG16** con Fine-tuning.  
+- **Optimización:**  
+  ✅ **Optimizer:** Adam  
+  ✅ **Loss function:** Categorical Crossentropy  
+  ✅ **Métricas:** Precision, Recall, F1-Score  
+- **Exportar modelo entrenado** en formato `.h5` o **SavedModel**.  
 
----
+### **3️⃣. Construir API con FastAPI para predicciones**  
+- Endpoint `POST /predict/` para recibir imágenes y devolver predicción.  
+- Endpoint `GET /health/` para chequeo del modelo.  
+- **Preprocesamiento de imágenes** con OpenCV/Pillow antes de enviarlas al modelo.  
 
-## **🗓️ Día 3: Frontend con Next.js** (12h)  
-
-📌 **Objetivo:**  
-- Construir una UI interactiva en **Next.js** para ingresar los datos y ver el resultado.  
-
-✅ **Tareas:**  
-- **Formulario para ingresar datos del usuario**  
-  - Edad, IMC, tabaquismo, historial familiar, etc.  
-- **Conectar el frontend con la API en FastAPI**  
-- **Mostrar los resultados de predicción de forma intuitiva**  
-  - **Barra de riesgo (%)** con colores (Verde = Bajo, Amarillo = Medio, Rojo = Alto)  
-  - **Gráfica de factores de riesgo más relevantes**  
-- **Optimizar la UI con Tailwind CSS**  
-
----
-
-## **🗓️ Día 4: Testing, Deploy y Documentación** (12h)  
-
-📌 **Objetivo:**  
-- Testear el sistema, hacer ajustes y desplegarlo.  
-
-✅ **Tareas:**  
-- **Pruebas del modelo y la API:**  
-  - Test unitarios con `pytest`  
-  - Pruebas de carga con `Locust`  
-- **Optimización del modelo si es necesario**  
-- **Deploy en Vercel (Frontend) y Railway o Fly.io (Backend)**  
-- **Crear README detallado con instrucciones**  
+✅ **Final del Día 1:**  
+- **Modelo entrenado** y guardado.  
+- **API funcional en local con FastAPI**.  
 
 ---
 
-## **🎯 Resultado Final:**  
-✔️ **Sistema completo y funcional**  
-✔️ **Modelo de predicción de riesgo de cáncer en producción**  
-✔️ **API lista para integrarse con otros servicios**  
-✔️ **UI intuitiva y visualmente atractiva**  
+## **📅 Día 2: Desarrollo del Frontend con Next.js + Integración Backend**
+🎯 **Objetivo:** Construir UI y conectar el backend.
 
-🚀 **Este proyecto es ideal para presentar en DKFZ porque está basado en datos reales y es útil en prevención médica.** ¡Dale con todo! 💪
+### **1️⃣. Crear frontend con Next.js + Tailwind**  
+✅ Página principal con formulario para subir imágenes.  
+✅ Página de resultados con predicciones y Grad-CAM.  
+✅ Dashboard con gráficas y estadísticas de predicciones.  
+
+### **2️⃣. Integrar API de FastAPI con Next.js**  
+✅ Subir imagen → Convertir a base64 → Enviar a `POST /predict/`.  
+✅ Mostrar resultado con **probabilidad de cada enfermedad**.  
+✅ Guardar historial en **MongoDB/PostgreSQL**.  
+
+✅ **Final del Día 2:**  
+- UI funcional con integración backend.  
+
+---
+
+## **📅 Día 3: Explicabilidad (Grad-CAM) + Optimización + Deploy**
+🎯 **Objetivo:** Agregar interpretabilidad, optimizar y desplegar.
+
+### **1️⃣. Implementar Grad-CAM para visualización**  
+✅ Mostrar zonas críticas en la radiografía que influyeron en la predicción.  
+✅ Usar **Matplotlib/OpenCV** para generar heatmaps sobre la imagen.  
+
+### **2️⃣. Optimización y seguridad**  
+✅ Agregar **caché en API** con Redis.  
+✅ Mejorar eficiencia con **Batch Inference**.  
+
+### **3️⃣. Deploy completo**  
+✅ **Backend (FastAPI) en Railway**.  
+✅ **Frontend (Next.js) en Vercel**.  
+✅ **Modelo almacenado en Hugging Face Spaces o Google Cloud Storage**.  
+
+✅ **Final del Día 3:**  
+- **Sistema completo y en producción.** 🚀🔥  
+
+---
+
+## **🚀 Resultado Final**
+✔ **Interfaz web (Next.js)** para subir imágenes y ver predicciones.  
+✔ **Backend (FastAPI)** con API de predicciones en tiempo real.  
+✔ **Modelo CNN (TensorFlow/Keras)** entrenado con el dataset.  
+✔ **Explicabilidad con Grad-CAM** para interpretación.  
+✔ **Deploy en la nube (Vercel + Railway + Hugging Face)**.  
+
+---
+
+🔹 **¿Te parece bien este plan?**  
+Podemos empezar con el **backend y entrenamiento del modelo hoy mismo** 🚀💥

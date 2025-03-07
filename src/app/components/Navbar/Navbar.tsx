@@ -38,7 +38,7 @@ export default function Navbar() {
         
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">
-          BratScope
+          MedicalScope
         </Link>
 
         {/* Main Navigation */}
@@ -78,7 +78,7 @@ export default function Navbar() {
 
           {/* Start Analysis Button */}
           <div className="hidden md:block">
-            <Link href="/upload">
+            <Link href="/tools">
               <Button className="px-6 py-2 text-lg rounded-xl bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white dark:bg-blue-500 dark:hover:bg-blue-600 shadow-md flex items-center gap-2">
                 {t("navbar.start_analysis")}
               </Button>
