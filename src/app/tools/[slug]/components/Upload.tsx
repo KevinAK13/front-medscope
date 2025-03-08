@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import UploadDropzone from "./UploadDropzone";
-import MedicalViewer from "../../../components/Upload/MedicalViewer";
 
 export default function UploadPage() {
   const [file, setFile] = useState<File | null>(null);
@@ -12,9 +11,6 @@ export default function UploadPage() {
       
       {/* ✅ Si no hay archivo cargado, muestra el área de carga */}
       {!file && <UploadDropzone onDrop={setFile} />}
-
-      {/* ✅ Si ya hay un archivo, lo manda al visor médico */}
-      {file && <MedicalViewer file={file} onRemove={() => setFile(null)} />}
     </main>
   );
 }

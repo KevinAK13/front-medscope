@@ -6,7 +6,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import Link from "next/link";
 import { Menu, Info, Mail, Home, Moon, Sun, Search } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "../Chat/Config/LanguageSelector";
+import LanguageSwitcher from "../../chat/components/Config/LanguageSelector";
 
 export default function Navbar() {
   const { t } = useTranslation();

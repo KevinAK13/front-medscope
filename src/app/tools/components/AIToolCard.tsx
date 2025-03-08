@@ -26,14 +26,14 @@ const AIToolCard = ({ tool, index }: ToolProps) => {
         <div className="border border-gray-300 dark:border-gray-600 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white dark:bg-gray-900">
           {/* Imagen */}
           <div className="relative w-full h-56">
-            <Image
-              src={tool.image}
-              alt={tool.title}
-              layout="fill"
-              objectFit="cover"
-              className="transition-transform duration-300 group-hover:scale-105"
-              priority
-            />
+          <Image
+          src={tool.image}
+          alt={tool.title}
+          layout="fill"
+          style={{ objectFit: "cover" }} // ✅ Corrección
+          className="transition-transform duration-300 group-hover:scale-105"
+          priority
+        />
           </div>
 
           {/* Contenido */}

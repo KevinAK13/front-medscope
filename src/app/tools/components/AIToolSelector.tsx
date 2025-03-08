@@ -22,8 +22,18 @@ const AIToolSelector = () => {
       {/* Contenedor de tarjetas */}
       <div className="grid md:grid-cols-3 gap-8 mt-12 max-w-6xl w-full">
       {aiTools.map((tool, index) => (
-                  <AIToolCard key={index} tool={tool} index={index} />
-        ))}
+  <AIToolCard
+    key={index}
+    tool={{
+      title: tool.title,
+      description: tool.description,
+      image: tool.image,
+      link: `/tools/${tool.slug}`, // Usa slug en vez de link
+    }}
+    index={index}
+  />
+))}
+
       </div>
     </main>
   );

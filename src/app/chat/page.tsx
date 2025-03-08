@@ -1,7 +1,7 @@
 "use client";
 
-import Chat from "../components/Chat/Conversation/Chat";
-import Sidebar from "../components/Chat/Sidebar/Sidebar";
+import Chat from "./components/Conversation/Chat";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 export default function ChatPage() {
   return (
