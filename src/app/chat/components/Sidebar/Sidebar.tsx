@@ -2,26 +2,21 @@
 
 import { useState } from "react";
 import NewConsultationButton from "./NewChat"; // Nuevo Componente
-
 import SidebarHeader from "./HeaderSidebar";
 import SettingsButton from "../Config/SettingsButton";
 import GlobalSettings from "../Config/GlobalSettings";
 import ChatHistory from "../Conversation/ChatHistory";
 
-export default function Sidebar() {
+export default function Sidebar({ setSidebarOpen }: { setSidebarOpen: (open: boolean) => void }) {
   const [openSettings, setOpenSettings] = useState(false);
 
   return (
     <aside className="flex flex-col justify-between h-full p-6">
       {/* Sección de Control */}
       <div className="flex flex-col space-y-12">
-      <SidebarHeader />
-
-        {/* Botón Nueva Consulta */}
+        <SidebarHeader />
         <NewConsultationButton />
-
-        {/* Historial de Consultas */}
-        <ChatHistory />
+        <ChatHistory setSidebarOpen={setSidebarOpen} />
       </div>
 
       {/* Sección de Configuración */}

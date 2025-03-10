@@ -2,15 +2,17 @@
 
 import { useState } from "react";
 import { useChatStore } from "@/hooks/useChatStore";
-import { Clock, MoreVertical, Pencil, Trash2 } from "lucide-react";
+import { MoreVertical, Pencil, Trash2 } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useTranslation } from "react-i18next";
+import { useMediaQuery } from "@/hooks/useMediaQuery"; // 📌 Importamos la detección de móvil
 
-export default function ChatHistory() {
+export default function ChatHistory({ setSidebarOpen }: { setSidebarOpen: (open: boolean) => void }) {
   const { history, chats, deleteChat, loadChat, currentChatId, updateChatTitle } = useChatStore();
   const { t } = useTranslation();
   const [editingChatId, setEditingChatId] = useState<string | null>(null);
   const [titleInput, setTitleInput] = useState<string>("");
+  const isMobile = useMediaQuery("(max-width: 768px)"); // 📌 Detectar si estamos en móvil
 
   const handleEditTitle = (chatId: string, newTitle: string) => {
     updateChatTitle(chatId, newTitle);
@@ -35,7 +37,10 @@ export default function ChatHistory() {
                 className={`flex justify-between items-center bg-gray-100 dark:bg-gray-800 p-3 rounded-lg transition hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer ${
                   chat.id === currentChatId ? "border-2 border-blue-500" : ""
                 }`}
-                onClick={() => loadChat(chat.id)}
+                onClick={() => {
+                  loadChat(chat.id);
+                  if (isMobile) setSidebarOpen(false); // 📌 Cerrar sidebar si es móvil
+                }}
               >
                 {/* Título del chat (editable) */}
                 {editingChatId === chat.id ? (

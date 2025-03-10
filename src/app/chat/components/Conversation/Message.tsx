@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 interface MessageProps {
   role: "user" | "assistant";
   content: string;
-  timestamp: string; // ✅ Timestamp almacenado en el estado
+  timestamp: string;
 }
 
 export default function Message({ role, content, timestamp }: MessageProps) {
@@ -24,12 +24,12 @@ export default function Message({ role, content, timestamp }: MessageProps) {
   return (
     <div className={`flex ${role === "user" ? "justify-end" : "justify-start"} my-2`}>
       <div className="flex flex-col max-w-lg">
-        {/* Burbuja de mensaje */}
+        {/* 💬 Burbuja de mensaje */}
         <div
-          className={`px-5 py-3 ${
+          className={`px-5 py-3 rounded-xl shadow-md ${
             role === "user"
-              ? "text-gray-900 dark:text-white self-end"
-              : "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-200"
+              ? "bg-blue-500 text-white self-end" // 💙 Mensaje del usuario
+              : "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-200" // 💬 Respuesta de GPT
           }`}
         >
           <ReactMarkdown
@@ -37,11 +37,6 @@ export default function Message({ role, content, timestamp }: MessageProps) {
               p: ({ ...props }) => <p className="text-sm leading-relaxed" {...props} />,
               strong: ({ ...props }) => <strong className="font-semibold text-gray-900 dark:text-white" {...props} />,
               em: ({ ...props }) => <em className="italic text-gray-600 dark:text-gray-300" {...props} />,
-              code: ({ ...props }) => (
-                <code className="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-md text-sm font-mono">
-                  {props.children}
-                </code>
-              ),
               ul: ({ ...props }) => <ul className="list-disc list-inside text-gray-700 dark:text-gray-300" {...props} />,
               blockquote: ({ ...props }) => (
                 <blockquote className="border-l-4 border-gray-400 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-gray-300">

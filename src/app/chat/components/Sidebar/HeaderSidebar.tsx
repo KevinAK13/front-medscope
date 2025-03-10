@@ -1,24 +1,13 @@
 "use client";
 
-import Image from "next/image";
-
 export default function SidebarHeader() {
   return (
-    <div className="flex items-center gap-3">
-      {/* Logo */}
-      <Image 
-        src="/img/litibu.png" 
-        alt="Litibu Logo" 
-        width={32} 
-        height={32} 
-        priority
-        className="rounded-lg"
-      />
+    <div className="flex items-center justify-center text-center gap-x-3 py-2 md:py-4">
       
-      {/* Nombre del Proyecto */}
-      <h2 className="text-lg font-semibold tracking-wide text-gray-900 dark:text-gray-100">
-        Medical AI
-      </h2>
+      {/* 📌 Nombre del Proyecto - Escalable en móviles */}
+      <span className="text-4xl md:text-3xl font-semibold tracking-wide text-gray-900 dark:text-gray-100">
+        MedicalScope
+      </span>
     </div>
   );
 }
