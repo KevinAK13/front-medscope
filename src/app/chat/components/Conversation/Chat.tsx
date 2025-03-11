@@ -70,7 +70,6 @@ export default function Chat() {
         )}
       </div>
 
-      {/* Input para escribir mensajes (placeholder mejorado) */}
       <ChatInput />
     </section>
   );

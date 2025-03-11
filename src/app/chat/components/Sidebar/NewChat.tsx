@@ -3,15 +3,18 @@
 import { useChatStore } from "@/hooks/useChatStore";
 import { Plus } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useMediaQuery } from "@/hooks/useMediaQuery"; // ✅ Importamos la detección de mobile
 
-export default function NewConsultationButton() {
+export default function NewConsultationButton({ setSidebarOpen }: { setSidebarOpen: (open: boolean) => void }) {
   const { startNewChat } = useChatStore();
   const { t } = useTranslation();
+  const isMobile = useMediaQuery("(max-width: 768px)"); // 📌 Detecta si es móvil
 
   const handleNewChat = () => {
-    startNewChat();
+    startNewChat(); // Iniciar nuevo chat
+    if (isMobile) setSidebarOpen(false); // ✅ Cerrar sidebar en mobile
     const inputField = document.getElementById("chat-input");
-    inputField?.focus();
+    inputField?.focus(); // ✅ Asegurar que el input se enfoque
   };
 
   return (

@@ -1,10 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useMode } from "@/context/ModeContext"; // ✅ Importamos el contexto
+import { prompts } from "@/app/config/prompts";
 
 export function useGPT() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { isMedicalMode } = useMode(); // ✅ Obtenemos el modo actual
 
   const sendMessage = async (messages: { role: "user" | "assistant"; content: string }[]) => {
     setLoading(true);
@@ -14,7 +17,10 @@ export function useGPT() {
       const response = await fetch("/api/gpt", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages }),
+        body: JSON.stringify({
+          prompt: isMedicalMode ? prompts.doctor : prompts.patient, // 🔥 Se usa el prompt desde el archivo modular
+          messages,
+        }),
       });
 
       if (!response.ok) {

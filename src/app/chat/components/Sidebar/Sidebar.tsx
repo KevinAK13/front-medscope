@@ -15,7 +15,7 @@ export default function Sidebar({ setSidebarOpen }: { setSidebarOpen: (open: boo
       {/* Sección de Control */}
       <div className="flex flex-col space-y-12">
         <SidebarHeader />
-        <NewConsultationButton />
+        <NewConsultationButton setSidebarOpen={setSidebarOpen} /> {/* ✅ Pasamos la función */}
         <ChatHistory setSidebarOpen={setSidebarOpen} />
       </div>
 

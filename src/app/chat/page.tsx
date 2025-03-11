@@ -5,6 +5,7 @@ import Chat from "./components/Conversation/Chat";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { Menu, X } from "lucide-react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { motion, AnimatePresence } from "framer-motion"; // ✅ Importamos Framer Motion
 
 export default function ChatPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -31,11 +32,25 @@ export default function ChatPage() {
         )}
       </button>
 
+      {/* 📌 Overlay para cerrar Sidebar al hacer clic fuera */}
+      <AnimatePresence>
+        {sidebarOpen && isMobile && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSidebarOpen(false)} // 📌 Cierra el sidebar si se hace clic fuera
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-10"
+          />
+        )}
+      </AnimatePresence>
+
       {/* 📌 Sidebar con animación mejorada */}
       <aside
-        className={`fixed inset-y-0 left-0 z-10 md:w-80 w-full bg-white dark:bg-gray-900 md:bg-transparent md:dark:bg-transparent p-6 transition-transform duration-300 ease-in-out transform ${
+        className={`fixed inset-y-0 left-0 z-20 md:w-80 w-4/5 bg-white dark:bg-gray-900 md:bg-transparent md:dark:bg-transparent p-6 transition-transform duration-300 ease-in-out transform ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0 md:relative md:flex flex-col justify-between shadow-lg md:shadow-none`}
+        onClick={(e) => e.stopPropagation()} // 📌 Evita cerrar si se hace clic dentro del sidebar
       >
         <Sidebar setSidebarOpen={setSidebarOpen} />
       </aside>

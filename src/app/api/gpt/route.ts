@@ -3,7 +3,7 @@ import OpenAI from "openai";
 
 export async function POST(req: NextRequest) {
   try {
-    const { messages } = await req.json();
+    const { prompt, messages } = await req.json();
 
     if (!messages || !Array.isArray(messages)) {
       return NextResponse.json({ error: "No messages provided" }, { status: 400 });
@@ -19,7 +19,10 @@ export async function POST(req: NextRequest) {
 
     const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",
-      messages,
+      messages: [
+        { role: "system", content: prompt }, // ✅ Se envía el prompt correcto
+        ...messages
+      ],
       max_tokens: 500,
     });
 
