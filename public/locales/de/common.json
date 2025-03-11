@@ -1,25 +1,87 @@
 {
-  "chat_title": "Wie kann ich Ihnen helfen?",
-  "no_messages": "Noch keine Nachrichten. Stellen Sie hier Ihre medizinische Frage.",
-  "placeholder": "Fragen Sie mich nach Symptomen, Behandlungen oder Diagnosen...",
-  "new_consultation": "Neue medizinische Beratung",
-  "chat_history": "Chat-Verlauf",
-  "no_recent_chats": "Keine aktuellen medizinischen Beratungen.",
-  "edit_name": "Namen bearbeiten",
-  "delete_chat": "Chat löschen",
-  "settings_button": "Einstellungen",
-  "consultation": "Medizinische Beratung",
-      "listening": "Zuhören...",
+  "chat": {
+    "title": "Wie kann ich Ihnen helfen?",
+    "no_messages": "Noch keine Nachrichten. Geben Sie hier Ihre medizinische Anfrage ein.",
+    "placeholder": "Fragen Sie mich zu Symptomen, Behandlungen oder Diagnosen...",
+    "new_consultation": "Neue medizinische Beratung",
+    "chat_history": "Chatverlauf",
+    "no_recent_chats": "Keine aktuellen medizinischen Beratungen.",
+    "edit_name": "Namen bearbeiten",
+    "delete_chat": "Chat löschen",
+    "listening": "Hören..."
+  },
 
+  "home": {
+    "title": "MedScope",
+    "description": "Eine experimentelle KI-gestützte Plattform zur Früherkennung von Krankheiten durch fortschrittliche medizinische Bildgebung und maschinelles Lernen.",
+    "steps": {
+      "upload": {
+        "title": "Medizinisches Bild hochladen",
+        "desc": "Laden Sie eine hochauflösende medizinische Aufnahme zur KI-gestützten Analyse hoch."
+      },
+      "analysis": {
+        "title": "KI-Diagnose",
+        "desc": "Unser Deep-Learning-Modell verarbeitet das Bild zur Erkennung möglicher Anomalien."
+      },
+      "results": {
+        "title": "Detaillierte Einblicke",
+        "desc": "Erhalten Sie einen von KI generierten Bericht mit Wahrscheinlichkeitswerten und ersten diagnostischen Einschätzungen."
+      }
+    },
+    "upload_button": "Diagnosetool auswählen"
+  },
+
+  "navbar": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "start_analysis": "Analyse starten",
+    "language": "Sprache"
+  },
+
+  "footer": {
+    "description": "KI-gestützte medizinische Bildanalyse zur Früherkennung von Krankheiten.",
+    "disclaimer": "Dieses Tool dient ausschließlich zu Forschungs- und Bildungszwecken und ersetzt keine professionelle medizinische Diagnose.",
+    "rights": "Alle Rechte vorbehalten.",
+    "made_by": "Entwickelt von MedScope."
+  },
+
+  "upload": {
+    "title": "MedScope KI-Analyse",
+    "description": "Laden Sie ein medizinisches Bild hoch oder nehmen Sie eines mit Ihrer Kamera auf. Unsere KI analysiert es auf mögliche Anzeichen.",
+    "analyze_button": "Bild analysieren",
+    "analyzing": "Bild wird analysiert..."
+  },
+
+  "status": {
+    "research": {
+      "title": "Laufende Forschung",
+      "desc": "Dieses Projekt wird kontinuierlich weiterentwickelt, um die KI-Genauigkeit zu verbessern."
+    },
+    "analysis": {
+      "title": "KI-gestützte Analyse",
+      "desc": "MedScope erforscht den Einsatz von KI in der medizinischen Bildgebung, ist aber kein medizinisches Gerät."
+    },
+    "experimental": {
+      "title": "Experimentelles Modell",
+      "desc": "Noch in der Testphase. Nicht für den klinischen Gebrauch bestimmt. Konsultieren Sie einen Arzt bei Symptomen."
+    },
+    "consultation": {
+      "title": "Professionelle Beratung",
+      "desc": "Für eine genaue Diagnose wenden Sie sich an einen zertifizierten Arzt."
+    }
+  },
 
   "settings": {
     "title": "Einstellungen",
     "user_mode": "Benutzermodus",
     "dark_mode": "Dunkelmodus",
     "language": "Sprache",
-    "clear_history": "Alle medizinischen Beratungen löschen"
+    "clear_history": "Medizinischen Verlauf löschen"
   },
 
-  "patient_mode": "Patient",
-  "doctor_mode": "Arzt"
+  "user_modes": {
+    "patient_mode": "Patient",
+    "doctor_mode": "Arzt"
+  }
 }

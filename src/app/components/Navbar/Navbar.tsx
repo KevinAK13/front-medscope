@@ -2,15 +2,16 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
-import { Menu, Info, Mail, Home, Moon, Sun, Search } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../../chat/components/Config/LanguageSelector";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const { t } = useTranslation();
   const [darkMode, setDarkMode] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     // Cargar tema desde localStorage
@@ -41,17 +42,17 @@ export default function Navbar() {
           MedicalScope
         </Link>
 
-        {/* Main Navigation */}
-        <ul className="hidden md:flex items-center gap-4 text-lg font-medium text-gray-700 dark:text-gray-300">
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex items-center gap-6 text-lg font-medium text-gray-700 dark:text-gray-300">
           {[
-            { name: t("navbar.home"), icon: <Home className="w-5 h-5" />, path: "/" },
-            { name: t("navbar.about"), icon: <Info className="w-5 h-5" />, path: "/about" },
-            { name: t("navbar.contact"), icon: <Mail className="w-5 h-5" />, path: "/contact" },
+            { name: t("navbar.home"), path: "/" },
+            { name: t("navbar.about"), path: "/about" },
+            { name: t("navbar.contact"), path: "/contact" },
           ].map((item) => (
             <li key={item.name}>
               <Link
                 href={item.path}
-                className="flex items-center gap-2 px-4 py-2 rounded-xl transition hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="px-4 py-2 rounded-xl transition hover:bg-gray-100 dark:hover:bg-gray-800"
               >
                 {item.name}
               </Link>
@@ -61,9 +62,6 @@ export default function Navbar() {
 
         {/* Right Section */}
         <div className="flex items-center gap-3">
-          {/* Language Selector ✅ Se usa el componente LanguageSwitcher */}
-          <LanguageSwitcher />
-
           {/* Dark Mode Toggle */}
           <button
             onClick={toggleDarkMode}
@@ -76,16 +74,66 @@ export default function Navbar() {
             )}
           </button>
 
-          {/* Start Analysis Button */}
+          {/* Start Analysis Button (Hidden on Mobile) */}
           <div className="hidden md:block">
             <Link href="/tools">
-              <Button className="px-6 py-2 text-lg rounded-xl bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 text-white dark:bg-blue-500 dark:hover:bg-blue-600 shadow-md flex items-center gap-2">
+              <Button className="px-6 py-2 text-lg rounded-xl bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600 shadow-md">
                 {t("navbar.start_analysis")}
               </Button>
             </Link>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden p-2 rounded-xl transition hover:bg-gray-200 dark:hover:bg-gray-700"
+          >
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </nav>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="absolute top-16 left-0 w-full bg-white dark:bg-gray-900 rounded-b-xl shadow-lg p-4 md:hidden border border-gray-200 dark:border-gray-800"
+        >
+          <ul className="flex flex-col gap-3 text-lg font-medium text-gray-700 dark:text-gray-300">
+            {[
+              { name: t("navbar.home"), path: "/" },
+              { name: t("navbar.about"), path: "/about" },
+              { name: t("navbar.contact"), path: "/contact" },
+            ].map((item) => (
+              <li key={item.name}>
+                <Link
+                  href={item.path}
+                  className="px-4 py-2 rounded-xl transition hover:bg-gray-100 dark:hover:bg-gray-800"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+
+            {/* Language Selector ✅ Se mueve al menú hamburguesa en mobile */}
+            <li className="mt-2">
+              <LanguageSwitcher />
+            </li>
+
+            {/* Start Analysis Button */}
+            <li>
+              <Link href="/tools">
+                <Button className="w-full px-6 py-2 text-lg rounded-xl bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600 shadow-md">
+                  {t("navbar.start_analysis")}
+                </Button>
+              </Link>
+            </li>
+          </ul>
+        </motion.div>
+      )}
     </header>
   );
 }

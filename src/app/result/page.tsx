@@ -1,6 +1,6 @@
 import Footer from "../components/Home/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
-import ResultPage from "../components/Result/Result";
+import ResultPage from "./components/Result";
 
 export default function Result() {
   return (
@@ -10,7 +10,7 @@ export default function Result() {
 
       {/* Ajustar padding-top para evitar superposición */}
       <div className="pt-12">
-        <ResultPage />
+        <ResultPage/>
       </div>
       <Footer/>
     </div>
