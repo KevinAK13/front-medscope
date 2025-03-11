@@ -104,11 +104,21 @@ export default function UploadPage({ tool }: UploadPageProps) {
         }} />
         )}
         {!preview && (
-          <CameraCapture onCapture={(imageBlob) => {
-            const file = new File([imageBlob], "captured-image.png", { type: "image/png" });
-            setPreview(URL.createObjectURL(file));
-            setImageFile(file);
-          }} setIsCameraOpen={setIsCameraOpen} />
+<CameraCapture
+  onCapture={(imageUrl) => {
+    console.log("Captured Image URL:", imageUrl); // ✅ Verificar en consola
+
+    // 🔄 Convertir URL en un archivo `File`
+    fetch(imageUrl)
+      .then((res) => res.blob())
+      .then((blob) => {
+        const file = new File([blob], "captured-image.png", { type: "image/png" });
+        setPreview(URL.createObjectURL(file)); // ✅ Mostrar vista previa
+        setImageFile(file); // ✅ Guardar archivo para el análisis
+      });
+  }}
+  setIsCameraOpen={setIsCameraOpen}
+/>
         )}
       </div>
 

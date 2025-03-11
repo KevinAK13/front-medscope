@@ -21,7 +21,7 @@ export default function ChatPage() {
       
       {/* 📌 Botón de menú para abrir/cerrar el Sidebar en móviles */}
       <button
-        className="absolute top-3 left-4 md:hidden z-20 p-2 rounded-full bg-gray-200 dark:bg-gray-800 shadow-md transition-transform active:scale-95"
+        className="absolute top-3 left-4 md:hidden z-30 p-2 rounded-full bg-gray-200 dark:bg-gray-800 shadow-md transition-transform active:scale-95"
         onClick={() => setSidebarOpen(!sidebarOpen)}
         aria-label={sidebarOpen ? "Cerrar menú" : "Abrir menú"}
       >

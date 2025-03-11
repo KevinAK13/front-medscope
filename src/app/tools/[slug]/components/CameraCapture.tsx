@@ -46,7 +46,7 @@ export default function CameraCapture({ onCapture, setIsCameraOpen }: CameraCapt
     }
   };
 
-  // 📷 Capturar imagen
+// 📷 Capturar imagen
 const captureImage = () => {
   if (videoRef.current && canvasRef.current) {
     const context = canvasRef.current.getContext("2d");
@@ -56,11 +56,29 @@ const captureImage = () => {
     canvasRef.current.height = videoRef.current.videoHeight;
     context.drawImage(videoRef.current, 0, 0, canvasRef.current.width, canvasRef.current.height);
 
+    // Convertir imagen a Base64
     const imageData = canvasRef.current.toDataURL("image/png");
-    console.log("Captured Image Data:", imageData); // ✅ Verificar en consola
 
-    localStorage.setItem("analyzedImage", imageData); // ✅ Guardar imagen en localStorage
-    onCapture(imageData);
+    // 🔄 Convertir Base64 a Blob
+    const byteString = atob(imageData.split(",")[1]);
+    const mimeString = imageData.split(",")[0].split(":")[1].split(";")[0];
+    const ab = new ArrayBuffer(byteString.length);
+    const ia = new Uint8Array(ab);
+    for (let i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+    }
+    const blob = new Blob([ab], { type: mimeString });
+
+    // 📂 Convertir Blob a un archivo
+    const file = new File([blob], "captured-image.png", { type: "image/png" });
+
+    // ✅ Guardar imagen en localStorage
+    localStorage.setItem("analyzedImage", URL.createObjectURL(file));
+
+    // ✅ Enviar la imagen capturada
+    onCapture(URL.createObjectURL(file));
+
+    // 📴 Apagar la cámara
     stopCamera();
   }
 };
