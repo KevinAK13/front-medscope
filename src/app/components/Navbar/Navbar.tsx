@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Menu, X, Moon, Sun } from "lucide-react";
@@ -12,7 +12,6 @@ export default function Navbar() {
   const { t } = useTranslation();
   const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null); // Referencia para el menú móvil
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
@@ -32,25 +31,6 @@ export default function Navbar() {
       localStorage.setItem("theme", "light");
     }
   };
-
-  // Cerrar menú si el usuario hace clic fuera de él
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setMenuOpen(false);
-      }
-    };
-
-    if (menuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [menuOpen]);
 
   return (
     <header className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-5xl z-50">
@@ -99,6 +79,9 @@ export default function Navbar() {
             )}
           </button>
 
+          {/* Start Analysis Button (Hidden on Mobile) */}
+ 
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -112,7 +95,6 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <motion.div
-          ref={menuRef} // Asignamos la referencia para detectar clics fuera
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
@@ -125,6 +107,7 @@ export default function Navbar() {
               { name: t("navbar.contact"), path: "/contact" },
               { name: t("navbar.chat"), path: "/chat" },
               { name: t("navbar.tools"), path: "/tools" },
+
             ].map((item) => (
               <li key={item.name}>
                 <Link
@@ -141,6 +124,8 @@ export default function Navbar() {
             <li className="mt-2">
               <LanguageSwitcher />
             </li>
+
+
           </ul>
         </motion.div>
       )}
