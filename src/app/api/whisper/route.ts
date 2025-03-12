@@ -13,6 +13,7 @@ export async function POST(req: NextRequest) {
     // 📌 Leer FormData y validar que el audio existe
     const formData = await req.formData();
     const fileBlob = formData.get("audio") as Blob | null;
+    const language = formData.get("language") as string | null; // 📌 Idioma opcional
 
     if (!fileBlob) {
       return NextResponse.json({ error: "❌ No se proporcionó un archivo de audio" }, { status: 400 });
@@ -26,7 +27,14 @@ export async function POST(req: NextRequest) {
     openaiFormData.append("model", "whisper-1");
     openaiFormData.append("file", file);
     openaiFormData.append("response_format", "text");
-    openaiFormData.append("language", "es"); // 🔹 Ajustable según idioma detectado
+
+    // 📌 **Auto-detectar o usar idioma**
+    const supportedLanguages = ["es", "de", "en"];
+    if (language && supportedLanguages.includes(language.toLowerCase())) {
+      openaiFormData.append("language", language.toLowerCase());
+    } else {
+      console.log("🌍 No se especificó idioma, Whisper hará auto-detección.");
+    }
 
     // ✅ Enviar petición a OpenAI con Axios
     const response = await axios.post("https://api.openai.com/v1/audio/transcriptions", openaiFormData, {

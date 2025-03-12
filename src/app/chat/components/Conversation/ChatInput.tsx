@@ -39,7 +39,6 @@ export default function ChatInput() {
   // 🎤 Alternar grabación de voz
   const handleVoiceInput = async () => {
     if (isRecording) {
-      setInput("Escuchando... 🎤");
       const text = await stopRecording();
       releaseMic();
       if (text) setInput(text);

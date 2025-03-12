@@ -44,7 +44,7 @@ export default function Chat() {
       {/* Mensajes */}
       <div 
         ref={chatRef} 
-        className="flex-1 overflow-y-auto p-6 space-y-4 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-700"
+        className="flex-1 overflow-y-auto p-3 space-y-4 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-700"
       >
         {messages.length === 0 ? (
           <p className="text-center text-gray-500 dark:text-gray-400 text-sm italic">
