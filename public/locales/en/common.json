@@ -3,11 +3,11 @@
   "chat": {
     "title": "How can I assist you today?",
     "no_messages": "No messages yet. Write your medical query here.",
-    "placeholder": "Ask me about symptoms, treatments, or diagnoses...",
+    "placeholder": "Describe your symptoms or health concern...",
     "new_consultation": "New Consultation",
     "consultation": "Medical Consultation",
     "chat_history": "Consultation History",
-    "no_recent_chats": "No recent medical consultations.",
+    "no_recent_chats": "No recent consultations found.",
     "edit_name": "Edit Name",
     "delete_chat": "Delete Conversation",
     "listening": "Listening..."
@@ -48,7 +48,7 @@
   },
   "upload": {
     "title": "AI Analysis with MedScope",
-    "instructions": "Upload a medical image or take a photo with your camera. Our AI will analyze it to detect potential anomalies.",
+    "instructions": "Upload a medical image or take a photo with your camera. The AI will analyze it to detect potential anomalies.",
     "analyze_button": "Analyze Image",
     "analyzing": "Analyzing image..."
   },
@@ -88,7 +88,7 @@
   },
   "github": {
     "title": "GitHub Repository",
-    "description": "Explore the complete source code, AI model details, API integration, and documentation. You can contribute or review its development.",
+    "description": "Explore the complete source code, AI model details, API integration, and documentation. Contributions and feedback are welcome.",
     "button": "View on GitHub",
     "model": "AI Model",
     "model_desc": "Technical details and architecture of the AI model used for medical image analysis.",
@@ -99,7 +99,7 @@
   },
   "contact": {
     "title": "Contact",
-    "description": "If you have any questions or would like to collaborate, you can reach us via WhatsApp, email, GitHub, or LinkedIn.",
+    "description": "If you have any questions or would like to collaborate, feel free to reach out via WhatsApp, email, GitHub, or LinkedIn.",
     "form": {
       "title": "Send a Message",
       "name_placeholder": "Your Name",
@@ -110,7 +110,7 @@
   },
   "uploaddicom": {
     "title": "Upload MRI Scan",
-    "description": "Upload an MRI scan in NIfTI (.nii, .nii.gz) or DICOM (.dcm) format. The AI model will analyze it.",
+    "description": "Upload an MRI scan in NIfTI (.nii, .nii.gz) or DICOM (.dcm) format. The AI will analyze it.",
     "drag_drop": "Drag and drop an MRI file (.nii, .nii.gz, .dcm) or click to select.",
     "invalid_file": "Invalid file type. Only NIfTI (.nii, .nii.gz) or DICOM (.dcm) files are allowed.",
     "invalid_nifti": "Invalid NIfTI file. Please check the format.",
@@ -125,7 +125,7 @@
     "title": "About MedScope",
     "image_alt": "Medical scan representing AI-powered analysis",
     "description_1": "MedScope is an experimental platform powered by artificial intelligence, designed to analyze medical images and assist in medical consultations with advanced technology.",
-    "description_2": "Through deep learning, it identifies clinical patterns in imaging studies and provides insights based on medical databases, supporting decision-making in healthcare settings.",
+    "description_2": "Using deep learning, it identifies clinical patterns in imaging studies and provides insights based on medical databases, supporting decision-making in healthcare settings.",
     "disclaimer": "MedScope is a support and reference tool. It does not replace professional medical evaluation or provide definitive diagnoses. Consult a specialist for an accurate assessment."
   },
   "status": {

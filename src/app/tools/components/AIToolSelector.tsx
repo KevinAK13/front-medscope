@@ -9,7 +9,7 @@ const AIToolSelector = () => {
   const { t } = useTranslation();
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 bg-gradient-to-t from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 transition-all">
+    <main className="min-h-screen flex flex-col items-center justify-center text-center sm:px-6 bg-gradient-to-t from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 transition-all">
       {/* Título con animación */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
