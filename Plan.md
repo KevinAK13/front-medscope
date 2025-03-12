@@ -1,9 +1,5 @@
-Sí, podemos hacerlo con este dataset **COVID-19 CHEST X-RAY DATABASE**. Es un dataset sólido que ya ha sido utilizado en investigación médica para entrenar modelos de IA en la detección de enfermedades pulmonares.
 
----
-
-# 🚀 **Plan de Desarrollo Express: Clasificador de Rayos X para Neumonía**
-**Tiempo estimado: 3-4 días en modo hackathon** 🔥
+#  **Plan de Desarrollo Express: Clasificador de Rayos X para Neumonía**
 
 ## 📌 **Objetivo**
 Desarrollar un **sistema de IA que analiza radiografías de tórax** y clasifica entre:  
@@ -95,6 +91,3 @@ Con una interfaz web para que los usuarios suban imágenes y obtengan una predic
 ✔ **Deploy en la nube (Vercel + Railway + Hugging Face)**.  
 
 ---
-
-🔹 **¿Te parece bien este plan?**  
-Podemos empezar con el **backend y entrenamiento del modelo hoy mismo** 🚀💥
