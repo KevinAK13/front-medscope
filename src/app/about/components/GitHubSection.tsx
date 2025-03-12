@@ -47,7 +47,7 @@ export default function GitHubSection() {
 
           {/* 📌 Botón de GitHub */}
           <a
-            href="https://github.com/your-repo"
+            href="https://github.com/KevinAK13/"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-5 inline-flex items-center gap-2 px-6 py-3 bg-blue-600 dark:bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 dark:hover:bg-blue-400 transition"
