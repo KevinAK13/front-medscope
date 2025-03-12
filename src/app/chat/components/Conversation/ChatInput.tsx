@@ -4,27 +4,35 @@ import { useState } from "react";
 import { Mic, ArrowUp, Loader2 } from "lucide-react";
 import { useChatStore } from "@/hooks/useChatStore";
 import { useWhisper } from "@/hooks/useWhisper";
-import { useGPT } from "@/hooks/useGPT"; // 🔥 Hook para GPT-4o
+import { useGPT } from "@/hooks/useGPT";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
 export default function ChatInput() {
   const [input, setInput] = useState("");
-  const { sendMessage, loading, error } = useGPT(); // ✅ Hook para llamadas a GPT-4o
+  const { sendMessage, loading, error } = useGPT();
+
   const { addMessage, ensureChatExists } = useChatStore();
   const { startRecording, stopRecording, isRecording, releaseMic } = useWhisper();
   const { t } = useTranslation();
 
-  // 📩 Enviar mensaje a GPT-4o
+  // 📩 Enviar mensaje a GPT
   const handleSend = async () => {
     if (!input.trim()) return;
-    
-    const chatId = ensureChatExists(); // ✅ Asegura que hay un chat activo
+
+    const chatId = ensureChatExists(); // Asegura que hay un chat activo
+
+    // Agrega mensaje del user a tu store
     addMessage({ role: "user", content: input });
 
-    setInput(""); // 🔄 Limpia el input mientras espera respuesta
-    const aiResponse = await sendMessage([{ role: "user", content: input }]);
+    // Limpia el input
+    setInput("");
 
+    // Llama a GPT pasando un string
+    const aiResponse = await sendMessage(input);
+    // Devuelve un string con la respuesta final
+
+    // Agregamos la respuesta del assistant a tu store
     addMessage({ role: "assistant", content: aiResponse });
   };
 
@@ -33,7 +41,7 @@ export default function ChatInput() {
     if (isRecording) {
       setInput("Escuchando... 🎤");
       const text = await stopRecording();
-      releaseMic(); // ✅ Apaga el micrófono completamente
+      releaseMic();
       if (text) setInput(text);
     } else {
       startRecording();
@@ -57,7 +65,7 @@ export default function ChatInput() {
             handleSend();
           }
         }}
-        placeholder={isRecording ? t("chat.listening") : t("chat.placeholder")}
+        placeholder={isRecording ? t("chat.listening") || "Escuchando..." : t("chat.placeholder") || "Escribe tu mensaje..."}
         disabled={loading}
       />
 

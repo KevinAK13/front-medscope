@@ -28,13 +28,6 @@ export default function DisclaimerModal({ onAccept }: { onAccept: () => void }) 
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="relative bg-white dark:bg-gray-900 p-6 md:p-8 rounded-xl shadow-lg max-w-lg w-full border border-gray-300 dark:border-gray-700 text-center"
           >
-            {/* Botón de cierre */}
-            <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition"
-            >
-              <X className="w-5 h-5" />
-            </button>
 
             {/* Título */}
             <h2 className="text-lg md:text-xl font-semibold mt-4 text-gray-900 dark:text-white">

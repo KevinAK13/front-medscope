@@ -45,7 +45,7 @@ export default function Message({ role, content, timestamp }: MessageProps) {
               ),
             }}
           >
-            {content}
+  {typeof content === "string" ? content : JSON.stringify(content)}
           </ReactMarkdown>
         </div>
 
