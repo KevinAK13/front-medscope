@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MedScope - KI-gestützte medizinische Bildanalyse
 
-## Getting Started
+## Überblick
+MedScope ist eine experimentelle Plattform, die künstliche Intelligenz zur Analyse medizinischer Bilder und zur Unterstützung bei der frühen Erkennung von Krankheiten nutzt. Die Plattform integriert Deep-Learning-Modelle zur Mustererkennung in medizinischen Bildgebungen und bietet interaktive Beratung durch eine medizinische KI.
 
-First, run the development server:
+## Hauptfunktionen
+- **Bildanalyse mit KI:** Hochentwickelte Modelle analysieren medizinische Bilder zur Erkennung möglicher Anomalien.
+- **Interaktive medizinische Beratung:** KI-gestützte Konsultationen zu Symptomen, Behandlungen und Diagnosen.
+- **Unterstützung mehrerer Sprachen:** Verfügbar in Deutsch, Englisch und Spanisch.
+- **Integration mit ChromaDB:** Sucht in wissenschaftlichen Datenbanken (PubMed, WHO, AHA) nach relevanten Informationen.
+- **Erweiterte Markdown-Unterstützung:** Verbesserte Textformatierung mit Syntax-Highlighting für Codeabschnitte.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Verwendete Technologien
+- **Frontend:** Next.js 15, Tailwind CSS
+- **Backend:** Node.js, NestJS, FastAPI
+- **Datenbanken:** PostgreSQL, ChromaDB
+- **KI-Modelle:** TensorFlow/Keras für Bildanalyse, OpenAI GPT-4 für medizinische Konsultationen
+- **Deployment:** Docker-Container, Vercel (Frontend), Railway (Backend)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation & Nutzung
+1. **Repository klonen:**
+   ```bash
+   git clone https://github.com/KevinAK13/front-medscope.git
+   cd front-medscope
+   ```
+2. **Abhängigkeiten installieren:**
+   ```bash
+   npm install
+   ```
+3. **Umgebungsvariablen setzen:** Füge eine `.env.local`-Datei hinzu und definiere OpenAI- und ChromaDB-API-Schlüssel.
+4. **Starten der Anwendung:**
+   ```bash
+   npm run dev
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Lizenz & Haftungsausschluss
+MedScope ist ein Forschungsprojekt und ersetzt keine professionelle medizinische Beratung. Die bereitgestellten Informationen dienen nur zu Bildungszwecken. Nutzer sollten sich immer an medizinische Fachkräfte wenden.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Kontakt & Mitwirkung
+Interessiert an der Entwicklung? Beiträge sind willkommen! Besuche unser GitHub-Repository für weitere Informationen.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
