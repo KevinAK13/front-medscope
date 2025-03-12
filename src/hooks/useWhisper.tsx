@@ -15,7 +15,7 @@ export const useWhisper = create<UseWhisperState>((set) => {
   let stream: MediaStream | null = null;
 
   const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-  const mimeType = isSafari ? "audio/mp4" : "audio/webm";
+  const mimeType = isSafari ? "audio/mp4" : "audio/webm"; // 📌 Usa MP4 para Safari
 
   return {
     isRecording: false,
@@ -24,7 +24,7 @@ export const useWhisper = create<UseWhisperState>((set) => {
       try {
         console.log("🎤 Solicitando acceso al micrófono...");
         stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        
+
         if (!stream) {
           console.error("❌ No se pudo acceder al micrófono.");
           return;
