@@ -9,7 +9,7 @@ interface DiagnosisProps {
 
 export default function DiagnosisResult({ diagnosis, confidence }: DiagnosisProps) {
   const { t } = useTranslation(); // 🔥 Obtén la función de traducción
-  const isBenign = diagnosis.toLowerCase().includes("benign");
+  const isBenign = diagnosis.toLowerCase().includes("Benign");
   const roundedConfidence = confidence.toFixed(2); // Redondea a 2 decimales
 
   const icon = isBenign ? (

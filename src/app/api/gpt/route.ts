@@ -32,7 +32,7 @@ ${prompt}
         { role: "system", content: systemPrompt },
         ...messages,
       ],
-      max_tokens: 500,
+      max_tokens: 20000,
       stream: true,
     });
 
