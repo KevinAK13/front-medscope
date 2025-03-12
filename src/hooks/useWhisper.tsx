@@ -12,25 +12,36 @@ interface UseWhisperState {
 export const useWhisper = create<UseWhisperState>((set) => {
   let mediaRecorder: MediaRecorder | null = null;
   let audioChunks: BlobPart[] = [];
-  let stream: MediaStream | null = null; // 🔹 Guardamos la referencia del stream
+  let stream: MediaStream | null = null;
+
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  const mimeType = isSafari ? "audio/mp4" : "audio/webm";
 
   return {
     isRecording: false,
 
     startRecording: async () => {
       try {
-        stream = await navigator.mediaDevices.getUserMedia({ audio: true }); // ✅ Captura el stream
-        mediaRecorder = new MediaRecorder(stream);
-        audioChunks = [];
+        console.log("🎤 Solicitando acceso al micrófono...");
+        stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        
+        if (!stream) {
+          console.error("❌ No se pudo acceder al micrófono.");
+          return;
+        }
 
+        mediaRecorder = new MediaRecorder(stream, { mimeType });
+
+        audioChunks = [];
         mediaRecorder.ondataavailable = (event) => {
-          audioChunks.push(event.data);
+          if (event.data.size > 0) audioChunks.push(event.data);
         };
 
         mediaRecorder.start();
         set({ isRecording: true });
+        console.log("✅ Grabación iniciada...");
       } catch (error) {
-        console.error("❌ Error iniciando la grabación:", error);
+        console.error("❌ Error iniciando grabación:", error);
       }
     },
 
@@ -41,9 +52,18 @@ export const useWhisper = create<UseWhisperState>((set) => {
         mediaRecorder.onstop = async () => {
           set({ isRecording: false });
 
-          const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
+          if (audioChunks.length === 0) {
+            console.error("❌ No se capturó audio.");
+            return resolve(null);
+          }
+
+          const audioBlob = new Blob(audioChunks, { type: mimeType });
+
+          console.log("📢 Archivo de audio generado:", audioBlob);
+          console.log("⏳ Enviando archivo de audio...");
+
           const formData = new FormData();
-          formData.append("audio", audioBlob, "audio.webm");
+          formData.append("audio", audioBlob, mimeType === "audio/webm" ? "audio.webm" : "audio.mp4");
 
           try {
             const response = await fetch("/api/whisper", {
@@ -52,13 +72,13 @@ export const useWhisper = create<UseWhisperState>((set) => {
             });
 
             const data = await response.json();
+            console.log("✅ Transcripción recibida:", data.text);
             resolve(data.text || null);
           } catch (error) {
             console.error("❌ Error en la transcripción:", error);
             resolve(null);
           }
 
-          // 🔹 Desactiva el micrófono completamente al terminar
           if (stream) {
             stream.getTracks().forEach((track) => track.stop());
             stream = null;
@@ -71,8 +91,6 @@ export const useWhisper = create<UseWhisperState>((set) => {
 
     releaseMic: () => {
       set({ isRecording: false });
-
-      // 🔹 Detener completamente el micrófono
       if (stream) {
         stream.getTracks().forEach((track) => track.stop());
         stream = null;

@@ -1,20 +1,21 @@
 {
+
   "consultation": "Medizinische Beratung",
   "chat": {
     "title": "Wie kann ich Ihnen heute helfen?",
     "no_messages": "Noch keine Nachrichten. Stellen Sie hier Ihre medizinische Anfrage.",
-    "placeholder": "Fragen Sie mich nach Symptomen, Behandlungen oder Diagnosen...",
+    "placeholder": "Beschreiben Sie Ihre Symptome...",
     "new_consultation": "Neue Beratung",
     "consultation": "Medizinische Beratung",
     "chat_history": "Beratungsverlauf",
-    "no_recent_chats": "Keine kürzlichen medizinischen Beratungen.",
+    "no_recent_chats": "Keine kürzlichen Beratungen gefunden.",
     "edit_name": "Name bearbeiten",
     "delete_chat": "Konversation löschen",
     "listening": "Höre zu..."
   },
   "home": {
     "title": "MedScope",
-    "description": "Ein experimentelles KI-gestütztes Tool zur erweiterten Analyse medizinischer Bilder und zur Unterstützung der Früherkennung von Krankheiten.",
+    "description": "Ein experimentelles, KI-gestütztes Tool zur erweiterten Analyse medizinischer Bilder und zur Unterstützung der Früherkennung von Krankheiten.",
     "steps": {
       "upload": {
         "title": "Bild hochladen",
@@ -34,7 +35,7 @@
   },
   "navbar": {
     "home": "Startseite",
-    "about": "Über uns",
+    "about": "Über MedScope",
     "contact": "Kontakt",
     "chat": "Chat",
     "tools": "KI-Tools",
@@ -48,7 +49,7 @@
   },
   "upload": {
     "title": "KI-Analyse mit MedScope",
-    "instructions": "Laden Sie ein medizinisches Bild hoch oder machen Sie ein Foto mit Ihrer Kamera. Unsere KI analysiert es, um mögliche Anomalien zu erkennen.",
+    "instructions": "Laden Sie ein medizinisches Bild hoch oder machen Sie ein Foto mit Ihrer Kamera. Die KI analysiert es, um mögliche Anomalien zu erkennen.",
     "analyze_button": "Bild analysieren",
     "analyzing": "Bild wird analysiert..."
   },
@@ -88,7 +89,7 @@
   },
   "github": {
     "title": "GitHub-Repository",
-    "description": "Entdecken Sie den vollständigen Quellcode, Details zum KI-Modell, API-Integration und Dokumentation. Sie können zur Entwicklung beitragen oder sie überprüfen.",
+    "description": "Entdecken Sie den vollständigen Quellcode, Details zum KI-Modell, API-Integration und Dokumentation. Beiträge und Feedback sind willkommen.",
     "button": "Auf GitHub ansehen",
     "model": "KI-Modell",
     "model_desc": "Technische Details und Architektur des KI-Modells für die Analyse medizinischer Bilder.",
@@ -99,7 +100,7 @@
   },
   "contact": {
     "title": "Kontakt",
-    "description": "Wenn Sie Fragen haben oder zusammenarbeiten möchten, können Sie uns über WhatsApp, E-Mail, GitHub oder LinkedIn erreichen.",
+    "description": "Wenn Sie Fragen haben oder zusammenarbeiten möchten, können Sie mich gerne über WhatsApp, E-Mail, GitHub oder LinkedIn kontaktieren.",
     "form": {
       "title": "Nachricht senden",
       "name_placeholder": "Ihr Name",
@@ -110,7 +111,7 @@
   },
   "uploaddicom": {
     "title": "MRT-Scan hochladen",
-    "description": "Laden Sie einen MRT-Scan im NIfTI- (.nii, .nii.gz) oder DICOM-Format (.dcm) hoch. Das KI-Modell wird ihn analysieren.",
+    "description": "Laden Sie einen MRT-Scan im NIfTI- (.nii, .nii.gz) oder DICOM-Format (.dcm) hoch. Die KI analysiert ihn.",
     "drag_drop": "Ziehen Sie eine MRT-Datei (.nii, .nii.gz, .dcm) per Drag & Drop hierher oder klicken Sie, um sie auszuwählen.",
     "invalid_file": "Ungültiger Dateityp. Nur NIfTI- (.nii, .nii.gz) oder DICOM-Dateien (.dcm) sind erlaubt.",
     "invalid_nifti": "Ungültige NIfTI-Datei. Bitte überprüfen Sie das Format.",

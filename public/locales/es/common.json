@@ -3,7 +3,7 @@
   "chat": {
     "title": "¿En qué puedo ayudarte?",
     "no_messages": "Aún no hay mensajes. Escribe tu consulta médica aquí.",
-    "placeholder": "Pregúntame sobre síntomas, tratamientos o diagnósticos...",
+    "placeholder": "Escribe tu consulta aquí...",
     "new_consultation": "Nueva Consulta",
     "consultation": "Consulta Medica",
     "chat_history": "Historial de Consultas",

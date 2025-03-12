@@ -51,7 +51,7 @@ const CardContent = ({
   isDisabled: boolean;
   t: any;
 }) => (
-  <div className="border border-gray-300 dark:border-gray-600 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white dark:bg-gray-900 w-[300px] min-h-[400px] flex flex-col">
+  <div className="border border-gray-300 dark:border-gray-600 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 bg-white dark:bg-gray-900 w-full min-h-[400px] flex flex-col">
     {/* Imagen */}
     <div className="relative w-full h-56 flex-shrink-0">
       <Image
