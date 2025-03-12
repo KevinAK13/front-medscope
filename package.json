@@ -43,6 +43,8 @@
     "next-i18next": "^15.4.2",
     "next-qrcode": "^2.5.1",
     "nifti-reader-js": "^0.8.0",
+    "node-loader": "^2.1.0",
+    "onnxruntime-web": "^1.21.0",
     "openai": "^4.87.3",
     "overlayscrollbars": "^2.10.1",
     "papaya-viewer": "^1.0.1455",
@@ -65,6 +67,7 @@
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
+    "vercel": "^41.4.0",
     "zod": "^3.24.1",
     "zustand": "^5.0.3"
   },
