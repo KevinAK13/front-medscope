@@ -1,8 +1,4 @@
-### 🚀 **Plan de Desarrollo en 3 Días: Clasificador de Células Cancerígenas en Biopsias** 🧫🔬  
 
-Para completar este proyecto en **3 días**, trabajaremos en **modo hackathon** optimizando el desarrollo y evitando bloqueos.  
-
----
 
 ## **📅 Día 1: Preprocesamiento y Entrenamiento del Modelo (Backend + ML)**
 🎯 **Objetivo:** Entrenar un modelo CNN eficiente y exponer una API con FastAPI.  
@@ -87,4 +83,3 @@ Para completar este proyecto en **3 días**, trabajaremos en **modo hackathon** 
 
 ---
 
-¿Te parece bien este plan? ¿Quieres empezar con el backend hoy mismo? 🚀🔥
