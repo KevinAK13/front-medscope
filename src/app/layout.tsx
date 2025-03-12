@@ -32,10 +32,9 @@ const outfit = Outfit({
 
 /* Metadata (permitido en layout.tsx) */
 export const metadata: Metadata = {
-  title: "BratScope - Experimental AI for Brain Tumor Segmentation",
-  description: "A research-driven AI system for experimental brain tumor segmentation in MRI scans. Not intended for medical diagnosis.",
+  title: "MedScope - AI-Powered Medical Tools",
+  description: "An advanced AI-driven platform for medical image analysis, supporting early disease detection and aiding healthcare professionals. Designed for research and educational purposes only, not for clinical diagnosis.",
 };
-
 
 /* Root Layout con soporte de idiomas */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
