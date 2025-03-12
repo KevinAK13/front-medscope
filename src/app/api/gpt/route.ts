@@ -27,12 +27,12 @@ ${prompt}
 
     // Llamamos GPT con streaming
     const stream = await openai.chat.completions.create({
-      model: "gpt-4",
+      model: "gpt-4o",
       messages: [
         { role: "system", content: systemPrompt },
         ...messages,
       ],
-      max_tokens: 20000,
+      max_tokens: 2048,
       stream: true,
     });
 
