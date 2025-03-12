@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next"; // 🔥 Importa useTranslation
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
 
@@ -11,11 +12,12 @@ interface GenderSelectProps {
 
 export default function GenderSelect({ gender, setGender }: GenderSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation(); // 🔥 Obtén la función de traducción
 
   const getLabel = (value: string) => {
-    if (value === "male") return "Male";
-    if (value === "female") return "Female";
-    return "Select Gender";
+    if (value === "male") return t("gender.male"); // 🔥 Traduce "Male"
+    if (value === "female") return t("gender.female"); // 🔥 Traduce "Female"
+    return t("gender.select_gender"); // 🔥 Traduce "Select Gender"
   };
 
   return (
@@ -39,13 +41,13 @@ export default function GenderSelect({ gender, setGender }: GenderSelectProps) {
           onClick={() => setGender("male")} 
           className="cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
         >
-          Male
+          {t("gender.male")} {/* 🔥 Traduce "Male" */}
         </DropdownMenuItem>
         <DropdownMenuItem 
           onClick={() => setGender("female")} 
           className="cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
         >
-          Female
+          {t("gender.female")} {/* 🔥 Traduce "Female" */}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

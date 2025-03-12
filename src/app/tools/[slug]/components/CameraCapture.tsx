@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { Camera, XCircle } from "lucide-react";
+import { useTranslation } from "react-i18next"; // 🔥 Importa useTranslation
 
 interface CameraCaptureProps {
   onCapture: (image: string) => void;
@@ -9,6 +10,7 @@ interface CameraCaptureProps {
 }
 
 export default function CameraCapture({ onCapture, setIsCameraOpen }: CameraCaptureProps) {
+  const { t } = useTranslation(); // 🔥 Obtén la función de traducción
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [stream, setStream] = useState<MediaStream | null>(null);
@@ -36,52 +38,52 @@ export default function CameraCapture({ onCapture, setIsCameraOpen }: CameraCapt
     } catch (err: any) {
       setIsCameraOpen(false); // ❌ Si falla, asegurarse de que la cámara se muestra como cerrada
       if (err.name === "NotAllowedError") {
-        setError("❌ Camera permission denied. Enable it in your browser settings.");
+        setError(t("camera.errors.permission_denied")); // 🔥 Traduce el mensaje de error
       } else if (err.name === "NotFoundError") {
-        setError("❌ No camera found. Connect a camera and try again.");
+        setError(t("camera.errors.no_camera")); // 🔥 Traduce el mensaje de error
       } else {
-        setError("❌ Error accessing camera: " + err.message);
+        setError(t("camera.errors.generic", { message: err.message })); // 🔥 Traduce el mensaje de error
       }
       console.error("Camera error:", err);
     }
   };
 
-// 📷 Capturar imagen
-const captureImage = () => {
-  if (videoRef.current && canvasRef.current) {
-    const context = canvasRef.current.getContext("2d");
-    if (!context) return;
+  // 📷 Capturar imagen
+  const captureImage = () => {
+    if (videoRef.current && canvasRef.current) {
+      const context = canvasRef.current.getContext("2d");
+      if (!context) return;
 
-    canvasRef.current.width = videoRef.current.videoWidth;
-    canvasRef.current.height = videoRef.current.videoHeight;
-    context.drawImage(videoRef.current, 0, 0, canvasRef.current.width, canvasRef.current.height);
+      canvasRef.current.width = videoRef.current.videoWidth;
+      canvasRef.current.height = videoRef.current.videoHeight;
+      context.drawImage(videoRef.current, 0, 0, canvasRef.current.width, canvasRef.current.height);
 
-    // Convertir imagen a Base64
-    const imageData = canvasRef.current.toDataURL("image/png");
+      // Convertir imagen a Base64
+      const imageData = canvasRef.current.toDataURL("image/png");
 
-    // 🔄 Convertir Base64 a Blob
-    const byteString = atob(imageData.split(",")[1]);
-    const mimeString = imageData.split(",")[0].split(":")[1].split(";")[0];
-    const ab = new ArrayBuffer(byteString.length);
-    const ia = new Uint8Array(ab);
-    for (let i = 0; i < byteString.length; i++) {
-      ia[i] = byteString.charCodeAt(i);
+      // 🔄 Convertir Base64 a Blob
+      const byteString = atob(imageData.split(",")[1]);
+      const mimeString = imageData.split(",")[0].split(":")[1].split(";")[0];
+      const ab = new ArrayBuffer(byteString.length);
+      const ia = new Uint8Array(ab);
+      for (let i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+      }
+      const blob = new Blob([ab], { type: mimeString });
+
+      // 📂 Convertir Blob a un archivo
+      const file = new File([blob], "captured-image.png", { type: "image/png" });
+
+      // ✅ Guardar imagen en localStorage
+      localStorage.setItem("analyzedImage", URL.createObjectURL(file));
+
+      // ✅ Enviar la imagen capturada
+      onCapture(URL.createObjectURL(file));
+
+      // 📴 Apagar la cámara
+      stopCamera();
     }
-    const blob = new Blob([ab], { type: mimeString });
-
-    // 📂 Convertir Blob a un archivo
-    const file = new File([blob], "captured-image.png", { type: "image/png" });
-
-    // ✅ Guardar imagen en localStorage
-    localStorage.setItem("analyzedImage", URL.createObjectURL(file));
-
-    // ✅ Enviar la imagen capturada
-    onCapture(URL.createObjectURL(file));
-
-    // 📴 Apagar la cámara
-    stopCamera();
-  }
-};
+  };
 
   // 📴 Apagar la cámara
   const stopCamera = () => {
@@ -105,10 +107,9 @@ const captureImage = () => {
         <button
           onClick={startCamera}
           className="px-6 py-3 mt-4 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition flex items-center gap-2"
-        
         >
           <Camera className="w-5 h-5" />
-          Open Camera
+          {t("camera.open_camera")} {/* 🔥 Traduce el texto del botón */}
         </button>
       )}
 
@@ -121,7 +122,7 @@ const captureImage = () => {
             onClick={captureImage} 
             className="mt-4 px-6 py-3 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 transition"
           >
-            Capture Image
+            {t("camera.capture_image")} {/* 🔥 Traduce el texto del botón */}
           </button>
         </>
       )}

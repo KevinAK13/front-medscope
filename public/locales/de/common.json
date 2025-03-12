@@ -1,87 +1,213 @@
 {
+  "consultation": "Medizinische Beratung",
   "chat": {
-    "title": "Wie kann ich Ihnen helfen?",
-    "no_messages": "Noch keine Nachrichten. Geben Sie hier Ihre medizinische Anfrage ein.",
-    "placeholder": "Fragen Sie mich zu Symptomen, Behandlungen oder Diagnosen...",
-    "new_consultation": "Neue medizinische Beratung",
-    "chat_history": "Chatverlauf",
-    "no_recent_chats": "Keine aktuellen medizinischen Beratungen.",
-    "edit_name": "Namen bearbeiten",
-    "delete_chat": "Chat löschen",
-    "listening": "Hören..."
+    "title": "Wie kann ich Ihnen heute helfen?",
+    "no_messages": "Noch keine Nachrichten. Stellen Sie hier Ihre medizinische Anfrage.",
+    "placeholder": "Fragen Sie mich nach Symptomen, Behandlungen oder Diagnosen...",
+    "new_consultation": "Neue Beratung",
+    "consultation": "Medizinische Beratung",
+    "chat_history": "Beratungsverlauf",
+    "no_recent_chats": "Keine kürzlichen medizinischen Beratungen.",
+    "edit_name": "Name bearbeiten",
+    "delete_chat": "Konversation löschen",
+    "listening": "Höre zu..."
   },
-
   "home": {
     "title": "MedScope",
-    "description": "Eine experimentelle KI-gestützte Plattform zur Früherkennung von Krankheiten durch fortschrittliche medizinische Bildgebung und maschinelles Lernen.",
+    "description": "Ein experimentelles KI-gestütztes Tool zur erweiterten Analyse medizinischer Bilder und zur Unterstützung der Früherkennung von Krankheiten.",
     "steps": {
       "upload": {
-        "title": "Medizinisches Bild hochladen",
-        "desc": "Laden Sie eine hochauflösende medizinische Aufnahme zur KI-gestützten Analyse hoch."
+        "title": "Bild hochladen",
+        "desc": "Laden Sie ein Diagnosebild zur KI-gestützten Analyse hoch."
       },
       "analysis": {
-        "title": "KI-Diagnose",
-        "desc": "Unser Deep-Learning-Modell verarbeitet das Bild zur Erkennung möglicher Anomalien."
+        "title": "KI-gestützte Auswertung",
+        "desc": "Das System analysiert das Bild, um mögliche Anomalien zu identifizieren."
       },
       "results": {
-        "title": "Detaillierte Einblicke",
-        "desc": "Erhalten Sie einen von KI generierten Bericht mit Wahrscheinlichkeitswerten und ersten diagnostischen Einschätzungen."
-      }
+        "title": "Analyseergebnisse",
+        "desc": "Erhalten Sie einen Bericht mit ersten Ergebnissen und einer Einschätzung möglicher Diagnosen."
+      },
+      "instructions": "Laden Sie ein Bild hoch oder machen Sie ein Foto mit Ihrer Kamera, um die Analyse zu starten. Stellen Sie sicher, dass das Bild klar und gut beleuchtet ist."
     },
-    "upload_button": "Diagnosetool auswählen"
+    "upload_button": "Auswertung starten"
   },
-
   "navbar": {
     "home": "Startseite",
     "about": "Über uns",
     "contact": "Kontakt",
-    "start_analysis": "Analyse starten",
+    "chat": "Chat",
+    "tools": "KI-Tools",
     "language": "Sprache"
   },
-
   "footer": {
-    "description": "KI-gestützte medizinische Bildanalyse zur Früherkennung von Krankheiten.",
-    "disclaimer": "Dieses Tool dient ausschließlich zu Forschungs- und Bildungszwecken und ersetzt keine professionelle medizinische Diagnose.",
+    "description": "KI-gestützte Analyse medizinischer Bilder zur Früherkennung von Krankheiten.",
+    "disclaimer": "Dieses Tool dient ausschließlich Forschungs- und Bildungszwecken. Es ersetzt keine professionelle medizinische Beratung.",
     "rights": "Alle Rechte vorbehalten.",
-    "made_by": "Entwickelt von MedScope."
+    "made_by": "Entwickelt von"
   },
-
   "upload": {
-    "title": "MedScope KI-Analyse",
-    "description": "Laden Sie ein medizinisches Bild hoch oder nehmen Sie eines mit Ihrer Kamera auf. Unsere KI analysiert es auf mögliche Anzeichen.",
+    "title": "KI-Analyse mit MedScope",
+    "instructions": "Laden Sie ein medizinisches Bild hoch oder machen Sie ein Foto mit Ihrer Kamera. Unsere KI analysiert es, um mögliche Anomalien zu erkennen.",
     "analyze_button": "Bild analysieren",
     "analyzing": "Bild wird analysiert..."
   },
-
+  "age_input": {
+    "placeholder": "Geben Sie Ihr Alter ein (0 - 120)"
+  },
+  "gender": {
+    "male": "Männlich",
+    "female": "Weiblich",
+    "select_gender": "Wählen Sie Ihr Geschlecht"
+  },
+  "upload_dropzone": {
+    "instructions": "Laden Sie ein medizinisches Bild hoch oder machen Sie ein Foto mit Ihrer Kamera."
+  },
+  "camera": {
+    "open_camera": "Kamera öffnen",
+    "capture_image": "Foto aufnehmen",
+    "errors": {
+      "permission_denied": "Kamerazugriff verweigert. Bitte aktivieren Sie ihn in Ihren Browsereinstellungen.",
+      "no_camera": "Keine Kamera gefunden. Bitte schließen Sie eine Kamera an und versuchen Sie es erneut."
+    }
+  },
+  "dataset": {
+    "title": "Datenbank und KI-Modell",
+    "description": "MedScope nutzt hochwertige medizinische Datenbanken für die Forschung zur Krankheitserkennung.",
+    "overview": {
+      "title": "Übersicht des Datensatzes",
+      "name": "Name:",
+      "images": "Anzahl der Bilder:",
+      "patients": "Anzahl der Patienten:",
+      "license": "Lizenz:"
+    },
+    "model": {
+      "title": "KI-Modell",
+      "description": "Das Modell wurde mit fortschrittlichen Deep-Learning-Techniken optimiert, einschließlich Transfer Learning und Bildvorverarbeitung."
+    }
+  },
+  "github": {
+    "title": "GitHub-Repository",
+    "description": "Entdecken Sie den vollständigen Quellcode, Details zum KI-Modell, API-Integration und Dokumentation. Sie können zur Entwicklung beitragen oder sie überprüfen.",
+    "button": "Auf GitHub ansehen",
+    "model": "KI-Modell",
+    "model_desc": "Technische Details und Architektur des KI-Modells für die Analyse medizinischer Bilder.",
+    "api": "API und Endpoints",
+    "api_desc": "Verfügbare Endpoints zur Integration KI-gestützter Diagnosen in andere Systeme.",
+    "documentation": "Dokumentation",
+    "documentation_desc": "Vollständige Projektdokumentation, einschließlich Nutzungsanleitungen und technischer Spezifikationen."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "description": "Wenn Sie Fragen haben oder zusammenarbeiten möchten, können Sie uns über WhatsApp, E-Mail, GitHub oder LinkedIn erreichen.",
+    "form": {
+      "title": "Nachricht senden",
+      "name_placeholder": "Ihr Name",
+      "message_placeholder": "Ihre Nachricht",
+      "button": "Über WhatsApp senden",
+      "error": "Bitte füllen Sie beide Felder aus, bevor Sie senden."
+    }
+  },
+  "uploaddicom": {
+    "title": "MRT-Scan hochladen",
+    "description": "Laden Sie einen MRT-Scan im NIfTI- (.nii, .nii.gz) oder DICOM-Format (.dcm) hoch. Das KI-Modell wird ihn analysieren.",
+    "drag_drop": "Ziehen Sie eine MRT-Datei (.nii, .nii.gz, .dcm) per Drag & Drop hierher oder klicken Sie, um sie auszuwählen.",
+    "invalid_file": "Ungültiger Dateityp. Nur NIfTI- (.nii, .nii.gz) oder DICOM-Dateien (.dcm) sind erlaubt.",
+    "invalid_nifti": "Ungültige NIfTI-Datei. Bitte überprüfen Sie das Format.",
+    "nifti_preview": "Metadaten der NIfTI-Datei",
+    "dimensions": "Abmessungen:",
+    "voxel_size": "Voxelgröße:",
+    "loading_preview": "Vorschau wird geladen...",
+    "analyze_button": "MRT-Scan analysieren",
+    "analyzing": "Scan wird analysiert..."
+  },
+  "about": {
+    "title": "Über MedScope",
+    "image_alt": "Medizinischer Scan, der KI-gestützte Analyse darstellt",
+    "description_1": "MedScope ist eine experimentelle Plattform, die von künstlicher Intelligenz angetrieben wird und entwickelt wurde, um medizinische Bilder zu analysieren und medizinische Beratungen mit modernster Technologie zu unterstützen.",
+    "description_2": "Durch Deep Learning identifiziert es klinische Muster in Bildgebungsstudien und liefert Erkenntnisse auf der Grundlage medizinischer Datenbanken, um die Entscheidungsfindung im Gesundheitswesen zu unterstützen.",
+    "disclaimer": "MedScope ist ein Unterstützungs- und Referenztool. Es ersetzt keine professionelle medizinische Bewertung oder stellt endgültige Diagnosen. Konsultieren Sie einen Spezialisten für eine genaue Beurteilung."
+  },
   "status": {
     "research": {
       "title": "Laufende Forschung",
-      "desc": "Dieses Projekt wird kontinuierlich weiterentwickelt, um die KI-Genauigkeit zu verbessern."
+      "desc": "Das KI-Modell wird kontinuierlich weiterentwickelt, um seine Genauigkeit und Analysefähigkeiten in medizinischen Umgebungen zu verbessern."
     },
     "analysis": {
-      "title": "KI-gestützte Analyse",
-      "desc": "MedScope erforscht den Einsatz von KI in der medizinischen Bildgebung, ist aber kein medizinisches Gerät."
-    },
-    "experimental": {
-      "title": "Experimentelles Modell",
-      "desc": "Noch in der Testphase. Nicht für den klinischen Gebrauch bestimmt. Konsultieren Sie einen Arzt bei Symptomen."
+      "title": "KI-gestützte Auswertung",
+      "desc": "MedScope nutzt Deep Learning, um Muster in medizinischen Bildern zu erkennen. Die Nutzung dient nur als Referenz und ersetzt keine klinische Diagnose."
     },
     "consultation": {
-      "title": "Professionelle Beratung",
-      "desc": "Für eine genaue Diagnose wenden Sie sich an einen zertifizierten Arzt."
+      "title": "Professionelle Aufsicht erforderlich",
+      "desc": "Für eine genaue Bewertung konsultieren Sie bitte einen Facharzt. MedScope ist nur ein Unterstützungstool in der medizinischen Forschung."
     }
   },
-
   "settings": {
     "title": "Einstellungen",
     "user_mode": "Benutzermodus",
     "dark_mode": "Dunkelmodus",
     "language": "Sprache",
-    "clear_history": "Medizinischen Verlauf löschen"
+    "clear_history": "Alle Beratungen löschen"
   },
-
   "user_modes": {
     "patient_mode": "Patient",
     "doctor_mode": "Arzt"
+  },
+  "ai_tools": {
+    "title": "KI-Diagnosetools",
+    "description": "Wählen Sie ein Tool, um medizinische Bilder mit künstlicher Intelligenz zu analysieren und mögliche Anomalien zu erkennen."
+  },
+  "aiTools": {
+    "melanoma": {
+      "title": "Melanom-Erkennung",
+      "description": "KI-gestützte Analyse von Hautbildern zur Früherkennung von Hautkrebs."
+    },
+    "covid": {
+      "title": "Diagnose von Lungenentzündung und COVID-19",
+      "description": "Auswertung von Röntgenaufnahmen des Brustkorbs zur Identifizierung von Lungenentzündung und COVID-19."
+    },
+    "breast_cancer": {
+      "title": "Analyse von Brustkrebs-Biopsien",
+      "description": "Früherkennung von Brustkrebs durch KI-gestützte Biopsieanalyse."
+    },
+    "coming_soon": "In Kürze verfügbar",
+    "use_tool": "Analyse starten"
+  },
+  "errors": {
+    "tool_not_found": "Tool nicht gefunden",
+    "missing_fields": "Bitte füllen Sie alle Felder aus.",
+    "analysis_failed": "Analyse fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "invalid_file": "Ungültige Datei. Es sind nur Bilder erlaubt."
+  },
+  "result": {
+    "malignant": "Bösartig (Melanom)",
+    "benign": "Gutartig",
+    "unknown": "Unbekannte Diagnose",
+    "no_prediction": "Keine Vorhersagedaten verfügbar. Bitte laden Sie ein Bild hoch und analysieren Sie es zuerst."
+  },
+  "diagnosis": {
+    "benign_message": "Diese Läsion erscheint gutartig, was in der Regel kein Grund zur Sorge ist. Dennoch werden regelmäßige Hautuntersuchungen für die allgemeine Gesundheit empfohlen.",
+    "malignant_message": "Diese Läsion könnte eine weitere Untersuchung durch einen Facharzt erfordern. Obwohl die KI eine Einschätzung liefert, ist die Überprüfung durch einen Dermatologen entscheidend für eine genaue Diagnose.",
+    "confidence": "Zuverlässigkeit"
+  },
+  "warning": {
+    "message": "KI-gestützte Bewertungen dienen nur zu Informationszwecken. Wenn Sie Bedenken bezüglich Ihrer Hautgesundheit haben, konsultieren Sie bitte einen qualifizierten medizinischen Fachmann."
+  },
+  "analyze_button": {
+    "text": "Ein weiteres Bild analysieren"
+  },
+  "disclaimer": {
+    "title": "Hinweis zur Nutzung von MedScope",
+    "message1": "MedScope ist eine experimentelle Plattform, die für die KI-gestützte Analyse medizinischer Bilder entwickelt wurde.",
+    "important_note": "Es ersetzt keine Bewertung durch einen Facharzt.",
+    "message2": "Die von der KI bereitgestellten Informationen dienen nur als Referenz. Diagnose und Behandlung müssen von zertifizierten medizinischen Fachleuten durchgeführt werden.",
+    "message3": "Indem Sie fortfahren, bestätigen Sie, dass MedScope ein Projekt in der Entwicklung ist und dass medizinische Entscheidungen auf einer professionellen Bewertung basieren sollten.",
+    "regulations": {
+      "title": "Vorschriften und Standards:",
+      "eu_ai": "EU-Verordnung zu künstlicher Intelligenz",
+      "mx_health": "Allgemeines Gesundheitsgesetz (Mexiko)",
+      "gdpr": "Datenschutz-Grundverordnung (DSGVO)"
+    },
+    "accept_button": "Ich verstehe und akzeptiere"
   }
 }

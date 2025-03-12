@@ -12,7 +12,7 @@ export default function AboutHeroSection() {
       initial={{ opacity: 0, y: 20 }} 
       animate={{ opacity: 1, y: 0 }} 
       transition={{ duration: 0.6 }}
-      className="w-full max-w-6xl mt-10 lg:mt-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 px-4"
+      className="w-full max-w-6xl mt-32 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 px-4"
     >
       {/* 📷 Imagen Representativa */}
       <motion.div
@@ -22,7 +22,7 @@ export default function AboutHeroSection() {
         className="relative w-full max-w-md md:max-w-lg"
       >
         <Image
-          src="/img/brain2.jpg"
+          src="/img/doctor.jpg"
           alt={t("about.image_alt")}
           width={900}
           height={500}
@@ -39,15 +39,15 @@ export default function AboutHeroSection() {
           </span>
         </h1>
 
-        <p className="mt-4 text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p className="mt-4 text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
           {t("about.description_1")}
         </p>
 
-        <p className="mt-3 text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p className="mt-3 text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
           {t("about.description_2")}
         </p>
 
-        <p className="mt-3 text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p className="mt-3 text-base md:text-xs text-gray-700 dark:text-gray-300 leading-relaxed text-justify font-light">
           {t("about.disclaimer")}
         </p>
       </div>

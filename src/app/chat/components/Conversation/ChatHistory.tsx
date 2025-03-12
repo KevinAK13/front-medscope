@@ -22,7 +22,7 @@ export default function ChatHistory({ setSidebarOpen }: { setSidebarOpen: (open:
   return (
     <div className="flex flex-col space-y-4">
       <h2 className="text-md font-medium text-gray-900 dark:text-gray-100">
-        {t("chat_history")}
+        {t("chat.chat_history")}
       </h2>
 
       <ul className="space-y-3">
@@ -74,7 +74,7 @@ export default function ChatHistory({ setSidebarOpen }: { setSidebarOpen: (open:
             );
           })
         ) : (
-          <p className="text-sm text-gray-500 dark:text-gray-400 text-center">{t("no_recent_chats")}</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 text-center">{t("chat.no_recent_chats")}</p>
         )}
       </ul>
     </div>
@@ -93,11 +93,11 @@ function ChatOptionsButton({ chatId, onEdit, onDelete }: { chatId: string; onEdi
       <DropdownMenuContent className="bg-white dark:bg-gray-800 shadow-md rounded-md">
         <DropdownMenuItem onClick={onEdit} className="flex items-center gap-2 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700 p-2 rounded-md">
           <Pencil className="w-4 h-4 text-gray-600 dark:text-gray-300" />
-          {t("edit_name")}
+          {t("chat.edit_name")}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={onDelete} className="flex items-center gap-2 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-red-700 p-2 rounded-md">
           <Trash2 className="w-4 h-4" />
-          {t("delete_chat")}
+          {t("chat.delete_chat")}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

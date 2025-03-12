@@ -38,7 +38,7 @@ export default function Chat() {
       
       {/* Nombre del Chat o Título Predeterminado */}
       <div className="p-4 border-b border-gray-300 dark:border-gray-700 text-center text-gray-900 dark:text-gray-100 font-semibold text-lg">
-        {currentChat ? currentChat.title : t("chat_title")}
+        {currentChat ? currentChat.title : t("chat.chat_title")}
       </div>
 
       {/* Mensajes */}
@@ -48,7 +48,7 @@ export default function Chat() {
       >
         {messages.length === 0 ? (
           <p className="text-center text-gray-500 dark:text-gray-400 text-sm italic">
-            {t("no_messages")}
+            {t("chat.no_messages")}
           </p>
         ) : (
           messages.map((msg, index) => {

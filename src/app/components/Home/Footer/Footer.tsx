@@ -11,18 +11,16 @@ export default function Footer() {
         
         {/* Logo & Descripción */}
         <div>
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white">MedicalScope</h2>
-          <p className="mt-2 text-gray-600 dark:text-gray-400 text-lg max-w-xl">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">MedScope          </h2>
+          <p className="mt-2 text-gray-600 dark:text-gray-400  max-w-xl">
             {t("footer.description")}
           </p>
-          <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">
-            {t("footer.disclaimer")}
-          </p>
+
         </div>
 
         {/* Copyright */}
         <p className="text-center text-gray-500 dark:text-gray-500 text-sm mt-4">
-          © {new Date().getFullYear()} MedicalScope. {t("footer.rights")}  
+          © {new Date().getFullYear()}           MedScope. {t("footer.rights")}  
           <br />
           {t("footer.made_by")} <span className="font-semibold text-gray-700 dark:text-gray-300">Kevin Guerra</span>
         </p>

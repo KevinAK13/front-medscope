@@ -31,7 +31,7 @@ export default function WhatsAppForm() {
       transition={{ duration: 0.6 }}
       className="mt-12 bg-white dark:bg-gray-800 shadow-lg p-8 rounded-xl max-w-lg w-full"
     >
-      <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+      <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
         {t("contact.form.title")}
       </h2>
       <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>

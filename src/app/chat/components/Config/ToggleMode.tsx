@@ -19,7 +19,7 @@ export default function ToggleMode() {
         }`}
       >
         <User className="w-4 h-4" />
-        <span className="text-sm">{t("patient_mode")}</span>
+        <span className="text-sm">{t("user_modes.patient_mode")}</span>
       </button>
 
       {/* Médico */}
@@ -30,7 +30,7 @@ export default function ToggleMode() {
         }`}
       >
         <Stethoscope className="w-4 h-4" />
-        <span className="text-sm">{t("doctor_mode")}</span>
+        <span className="text-sm">{t("user_modes.doctor_mode")}</span>
       </button>
     </div>
   );

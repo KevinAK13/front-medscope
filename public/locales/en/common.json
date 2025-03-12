@@ -1,83 +1,105 @@
 {
+  "consultation": "Medical Consultation",
   "chat": {
-    "title": "How can I help you?",
-    "no_messages": "No messages yet. Type your medical query here.",
+    "title": "How can I assist you today?",
+    "no_messages": "No messages yet. Write your medical query here.",
     "placeholder": "Ask me about symptoms, treatments, or diagnoses...",
-    "new_consultation": "New Medical Consultation",
-    "chat_history": "Chat History",
-    "no_recent_chats": "No recent Medical Consultations.",
-    "edit_name": "Edit name",
-    "delete_chat": "Delete chat",
+    "new_consultation": "New Consultation",
+    "consultation": "Medical Consultation",
+    "chat_history": "Consultation History",
+    "no_recent_chats": "No recent medical consultations.",
+    "edit_name": "Edit Name",
+    "delete_chat": "Delete Conversation",
     "listening": "Listening..."
   },
-
   "home": {
     "title": "MedScope",
-    "description": "An experimental AI-powered platform for early disease detection through advanced medical imaging and machine learning.",
+    "description": "An experimental AI-powered tool for advanced medical image analysis and early disease detection support.",
     "steps": {
       "upload": {
-        "title": "Upload Medical Image",
-        "desc": "Submit a high-resolution medical scan for AI-driven analysis."
+        "title": "Image Upload",
+        "desc": "Upload a diagnostic image for AI-powered analysis."
       },
       "analysis": {
-        "title": "AI-Powered Diagnosis",
-        "desc": "Our advanced deep learning model processes the scan to detect potential abnormalities."
+        "title": "AI-Assisted Evaluation",
+        "desc": "The system analyzes the image to identify potential anomalies."
       },
       "results": {
-        "title": "Detailed Insights",
-        "desc": "Receive an AI-generated report with probability scores and preliminary diagnostic insights."
-      }
+        "title": "Analysis Results",
+        "desc": "Receive a report with initial findings and an assessment of possible diagnoses."
+      },
+      "instructions": "Upload an image or capture a photo with your camera to start the analysis. Ensure the image is clear and well-lit."
     },
-    "upload_button": "Select Diagnosis Tool"
+    "upload_button": "Start Evaluation"
   },
-
   "navbar": {
     "home": "Home",
     "about": "About",
     "contact": "Contact",
-    "start_analysis": "Start Analysis",
+    "chat": "Chat",
+    "tools": "AI Tools",
     "language": "Language"
   },
-
   "footer": {
-    "description": "AI-powered medical imaging analysis for early disease detection.",
-    "disclaimer": "This tool is for research and educational purposes only and does not replace professional medical diagnosis.",
+    "description": "AI-powered medical image analysis for early disease detection.",
+    "disclaimer": "This tool is for research and educational purposes only. It does not replace professional medical consultation.",
     "rights": "All rights reserved.",
-    "made_by": "Developed by MedScope."
+    "made_by": "Developed by"
   },
-
   "upload": {
-    "title": "MedScope AI Analysis",
-    "description": "Upload a medical scan or capture one with your camera. Our AI will analyze it for potential indicators.",
-    "analyze_button": "Analyze Scan",
-    "analyzing": "Analyzing scan..."
+    "title": "AI Analysis with MedScope",
+    "instructions": "Upload a medical image or take a photo with your camera. Our AI will analyze it to detect potential anomalies.",
+    "analyze_button": "Analyze Image",
+    "analyzing": "Analyzing image..."
   },
-
+  "age_input": {
+    "placeholder": "Enter your age (0 - 120)"
+  },
+  "gender": {
+    "male": "Male",
+    "female": "Female",
+    "select_gender": "Select Your Gender"
+  },
+  "upload_dropzone": {
+    "instructions": "Upload a medical image or take a photo with your camera."
+  },
+  "camera": {
+    "open_camera": "Open Camera",
+    "capture_image": "Capture Image",
+    "errors": {
+      "permission_denied": "Camera permission denied. Please enable it in your browser settings.",
+      "no_camera": "No camera found. Please connect a camera and try again."
+    }
+  },
   "dataset": {
-    "title": "Dataset & AI Model",
-    "description": "MedScope utilizes high-quality medical imaging datasets for disease detection research.",
+    "title": "Database and AI Model",
+    "description": "MedScope uses high-quality medical databases for disease detection research.",
     "overview": {
       "title": "Dataset Overview",
       "name": "Name:",
-      "images": "Number of Scans:",
+      "images": "Number of Images:",
       "patients": "Number of Patients:",
       "license": "License:"
     },
     "model": {
       "title": "AI Model",
-      "description": "The model is optimized with deep learning techniques, including transfer learning and advanced preprocessing."
+      "description": "The model has been optimized with advanced deep learning techniques, including transfer learning and image preprocessing."
     }
   },
-
   "github": {
     "title": "GitHub Repository",
-    "description": "Access the source code, scripts, and documentation. Feel free to explore or contribute.",
-    "button": "View on GitHub"
+    "description": "Explore the complete source code, AI model details, API integration, and documentation. You can contribute or review its development.",
+    "button": "View on GitHub",
+    "model": "AI Model",
+    "model_desc": "Technical details and architecture of the AI model used for medical image analysis.",
+    "api": "API and Endpoints",
+    "api_desc": "Available endpoints for integrating AI-assisted diagnostics into other systems.",
+    "documentation": "Documentation",
+    "documentation_desc": "Complete project documentation, including usage guides and technical specifications."
   },
-
   "contact": {
-    "title": "Get in Touch",
-    "description": "If you have any inquiries or would like to collaborate, feel free to reach out via WhatsApp, email, or connect through GitHub and LinkedIn.",
+    "title": "Contact",
+    "description": "If you have any questions or would like to collaborate, you can reach us via WhatsApp, email, GitHub, or LinkedIn.",
     "form": {
       "title": "Send a Message",
       "name_placeholder": "Your Name",
@@ -86,58 +108,106 @@
       "error": "Please fill in both fields before sending."
     }
   },
-
   "uploaddicom": {
     "title": "Upload MRI Scan",
     "description": "Upload an MRI scan in NIfTI (.nii, .nii.gz) or DICOM (.dcm) format. The AI model will analyze it.",
-    "drag_drop": "Drag & drop an MRI scan (.nii, .nii.gz, .dcm) or click to select",
-    "invalid_file": "Invalid file type. Please upload a NIfTI (.nii, .nii.gz) or DICOM (.dcm) file.",
+    "drag_drop": "Drag and drop an MRI file (.nii, .nii.gz, .dcm) or click to select.",
+    "invalid_file": "Invalid file type. Only NIfTI (.nii, .nii.gz) or DICOM (.dcm) files are allowed.",
     "invalid_nifti": "Invalid NIfTI file. Please check the format.",
-    "nifti_preview": "NIfTI Metadata",
+    "nifti_preview": "NIfTI File Metadata",
     "dimensions": "Dimensions:",
     "voxel_size": "Voxel Size:",
     "loading_preview": "Loading preview...",
     "analyze_button": "Analyze MRI Scan",
     "analyzing": "Analyzing scan..."
   },
-
   "about": {
     "title": "About MedScope",
-    "image_alt": "Medical scan representing AI-powered disease detection",
-    "description_1": "This AI-powered project focuses on analyzing medical scans to assist in disease research and early detection.",
-    "description_2": "Using deep learning, the system identifies patterns that may contribute to advancements in radiology and medical imaging.",
-    "disclaimer": "This system is not a diagnostic tool. Consult a medical professional for health concerns."
+    "image_alt": "Medical scan representing AI-powered analysis",
+    "description_1": "MedScope is an experimental platform powered by artificial intelligence, designed to analyze medical images and assist in medical consultations with advanced technology.",
+    "description_2": "Through deep learning, it identifies clinical patterns in imaging studies and provides insights based on medical databases, supporting decision-making in healthcare settings.",
+    "disclaimer": "MedScope is a support and reference tool. It does not replace professional medical evaluation or provide definitive diagnoses. Consult a specialist for an accurate assessment."
   },
-
   "status": {
     "research": {
       "title": "Ongoing Research",
-      "desc": "This project is in continuous development, improving AI accuracy."
+      "desc": "The AI model is under continuous development, improving its accuracy and analysis capabilities in medical environments."
     },
     "analysis": {
-      "title": "AI-Assisted Analysis",
-      "desc": "MedScope explores AI's role in medical imaging but is not a medical device."
-    },
-    "experimental": {
-      "title": "Experimental Model",
-      "desc": "Still under testing. Not for clinical use. Consult a doctor for any symptoms."
+      "title": "AI-Assisted Evaluation",
+      "desc": "MedScope uses deep learning to detect patterns in medical images. Its use is for reference only and does not replace a clinical diagnosis."
     },
     "consultation": {
-      "title": "Professional Consultation",
-      "desc": "For an accurate diagnosis, seek a certified medical professional."
+      "title": "Professional Supervision Required",
+      "desc": "For an accurate evaluation, consult a healthcare professional. MedScope is only a support tool in medical research."
     }
   },
-
   "settings": {
     "title": "Settings",
     "user_mode": "User Mode",
     "dark_mode": "Dark Mode",
     "language": "Language",
-    "clear_history": "Clear all Medical Consultation"
+    "clear_history": "Clear All Consultations"
   },
-
   "user_modes": {
     "patient_mode": "Patient",
     "doctor_mode": "Doctor"
+  },
+  "ai_tools": {
+    "title": "AI Diagnostic Tools",
+    "description": "Select a tool to analyze medical images with artificial intelligence and detect potential anomalies."
+  },
+  "aiTools": {
+    "melanoma": {
+      "title": "Melanoma Detection",
+      "description": "AI-powered analysis of skin images for early detection of skin cancer."
+    },
+    "covid": {
+      "title": "Pneumonia and COVID-19 Diagnosis",
+      "description": "Evaluation of chest X-rays to identify pneumonia and COVID-19."
+    },
+    "breast_cancer": {
+      "title": "Breast Cancer Biopsy Analysis",
+      "description": "Early detection of breast cancer through AI-powered biopsy analysis."
+    },
+    "coming_soon": "Coming Soon",
+    "use_tool": "Start Analysis"
+  },
+  "errors": {
+    "tool_not_found": "Tool not found",
+    "missing_fields": "Please fill in all fields.",
+    "analysis_failed": "Analysis failed. Please try again.",
+    "invalid_file": "Invalid file. Only images are allowed."
+  },
+  "result": {
+    "malignant": "Malignant (Melanoma)",
+    "benign": "Benign",
+    "unknown": "Unrecognized Diagnosis",
+    "no_prediction": "No prediction data available. Please upload an image and analyze it first."
+  },
+  "diagnosis": {
+    "benign_message": "This lesion appears benign, which is usually not a cause for concern. However, regular skin check-ups are recommended for overall health.",
+    "malignant_message": "This lesion may require further evaluation by a professional. While AI provides an assessment, a dermatologist's review is crucial for an accurate diagnosis.",
+    "confidence": "Confidence"
+  },
+  "warning": {
+    "message": "AI-based assessments are for informational purposes only. If you have concerns about your skin health, please consult a qualified medical professional."
+  },
+  "analyze_button": {
+    "text": "Analyze Another Image"
+  },
+  "disclaimer": {
+    "title": "MedScope Usage Notice",
+    "message1": "MedScope is an experimental platform designed for AI-assisted medical image analysis.",
+    "important_note": "It does not replace the evaluation of a healthcare professional.",
+    "message2": "The information provided by AI should be taken as a reference only. Diagnosis and treatment must be conducted by certified medical professionals.",
+    "message3": "By continuing, you acknowledge that MedScope is a project in development and that any medical decisions should be based on professional evaluation.",
+    "regulations": {
+      "title": "Regulations and Standards:",
+      "eu_ai": "EU Artificial Intelligence Regulation",
+      "mx_health": "General Health Law (Mexico)",
+      "gdpr": "General Data Protection Regulation (GDPR)"
+    },
+    "accept_button": "I Understand and Accept"
   }
 }

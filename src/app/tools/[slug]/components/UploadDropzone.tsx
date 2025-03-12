@@ -3,12 +3,14 @@
 import { useDropzone } from "react-dropzone";
 import { motion } from "framer-motion";
 import { UploadCloud } from "lucide-react";
+import { useTranslation } from "react-i18next"; // 🔥 Importa useTranslation
 
 interface UploadDropzoneProps {
   onDrop: (file: File) => void;
 }
 
 export default function UploadDropzone({ onDrop }: UploadDropzoneProps) {
+  const { t } = useTranslation(); // 🔥 Obtén la función de traducción
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop: (acceptedFiles) => {
       if (acceptedFiles.length > 0) {
@@ -31,8 +33,8 @@ export default function UploadDropzone({ onDrop }: UploadDropzoneProps) {
       <input {...getInputProps()} />
       <div className="flex flex-col items-center justify-center text-center">
         <UploadCloud className="w-12 h-12 text-gray-500 dark:text-gray-300" />
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
-          Drag & drop an image or click to select
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+          {t("upload_dropzone.instructions")} {/* 🔥 Traduce el texto */}
         </p>
       </div>
     </motion.div>

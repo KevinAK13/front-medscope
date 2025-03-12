@@ -1,87 +1,213 @@
 {
+  "consultation": "Consulta Medica",
   "chat": {
     "title": "¿En qué puedo ayudarte?",
-    "no_messages": "Aún no hay mensajes. Escribe aquí tu consulta médica.",
+    "no_messages": "Aún no hay mensajes. Escribe tu consulta médica aquí.",
     "placeholder": "Pregúntame sobre síntomas, tratamientos o diagnósticos...",
-    "new_consultation": "Nueva Consulta Médica",
+    "new_consultation": "Nueva Consulta",
+    "consultation": "Consulta Medica",
     "chat_history": "Historial de Consultas",
     "no_recent_chats": "No hay consultas médicas recientes.",
     "edit_name": "Editar nombre",
-    "delete_chat": "Eliminar chat",
+    "delete_chat": "Eliminar conversación",
     "listening": "Escuchando..."
   },
-
   "home": {
     "title": "MedScope",
-    "description": "Una plataforma experimental con IA para la detección temprana de enfermedades mediante imágenes médicas avanzadas y aprendizaje automático.",
+    "description": "Herramienta experimental de inteligencia artificial para el análisis avanzado de imágenes médicas y apoyo en la detección temprana de enfermedades.",
     "steps": {
       "upload": {
-        "title": "Subir Imagen Médica",
-        "desc": "Envía una imagen médica en alta resolución para su análisis con IA."
+        "title": "Carga de Imagen",
+        "desc": "Sube una imagen de diagnóstico para su análisis con inteligencia artificial."
       },
       "analysis": {
-        "title": "Diagnóstico con IA",
-        "desc": "Nuestro modelo de aprendizaje profundo analiza la imagen para detectar posibles anomalías."
+        "title": "Evaluación Asistida por IA",
+        "desc": "El sistema analiza la imagen para identificar posibles anomalías."
       },
       "results": {
-        "title": "Resultados Detallados",
-        "desc": "Recibe un informe generado por IA con probabilidades y hallazgos preliminares."
-      }
+        "title": "Resultados del Análisis",
+        "desc": "Obtén un informe con hallazgos iniciales y una evaluación de posibles diagnósticos."
+      },
+      "instructions": "Sube una imagen o captura una foto con tu cámara para comenzar el análisis. Asegúrate de que la imagen sea clara y esté bien iluminada."
     },
-    "upload_button": "Seleccionar Herramienta de Diagnóstico"
+    "upload_button": "Iniciar Evaluación"
   },
-
   "navbar": {
     "home": "Inicio",
     "about": "Acerca de",
     "contact": "Contacto",
-    "start_analysis": "Iniciar Análisis",
+    "chat": "Chat",
+    "tools": "Herramientas IA",
     "language": "Idioma"
   },
-
   "footer": {
-    "description": "Análisis de imágenes médicas con IA para detección temprana de enfermedades.",
-    "disclaimer": "Esta herramienta es solo para fines educativos e investigativos y no sustituye un diagnóstico médico profesional.",
+    "description": "Análisis de imágenes médicas con IA para la detección temprana de enfermedades.",
+    "disclaimer": "Esta herramienta es solo para investigación y fines educativos. No sustituye una consulta médica profesional.",
     "rights": "Todos los derechos reservados.",
-    "made_by": "Desarrollado por MedScope."
+    "made_by": "Desarrollado por"
   },
-
   "upload": {
     "title": "Análisis con IA de MedScope",
-    "description": "Sube una imagen médica o captura una con tu cámara. Nuestra IA la analizará en busca de posibles indicadores.",
+    "instructions": "Sube una imagen médica o toma una fotografía con tu cámara. Nuestra IA la analizará para detectar posibles anomalías.",
     "analyze_button": "Analizar Imagen",
     "analyzing": "Analizando imagen..."
   },
-
+  "age_input": {
+    "placeholder": "Ingresa tu edad (0 - 120)"
+  },
+  "gender": {
+    "male": "Hombre",
+    "female": "Mujer",
+    "select_gender": "Selecciona tu género"
+  },
+  "upload_dropzone": {
+    "instructions": "Sube una imagen médica o toma una fotografía con tu cámara."
+  },
+  "camera": {
+    "open_camera": "Abrir cámara",
+    "capture_image": "Capturar imagen",
+    "errors": {
+      "permission_denied": "Permiso de cámara denegado. Actívalo en la configuración de tu navegador.",
+      "no_camera": "No se encontró ninguna cámara. Conecta una cámara e intenta de nuevo."
+    }
+  },
+  "dataset": {
+    "title": "Base de Datos y Modelo de IA",
+    "description": "MedScope utiliza bases de datos médicas de alta calidad para la investigación en detección de enfermedades.",
+    "overview": {
+      "title": "Resumen del Conjunto de Datos",
+      "name": "Nombre:",
+      "images": "Número de Imágenes:",
+      "patients": "Número de Pacientes:",
+      "license": "Licencia:"
+    },
+    "model": {
+      "title": "Modelo de IA",
+      "description": "El modelo ha sido optimizado con técnicas avanzadas de aprendizaje profundo, incluyendo transferencia de aprendizaje y preprocesamiento de imágenes."
+    }
+  },
+  "github": {
+    "title": "Repositorio en GitHub",
+    "description": "Explora el código fuente completo, los detalles del modelo de IA, la integración de API y la documentación. Puedes contribuir o revisar su desarrollo.",
+    "button": "Ver en GitHub",
+    "model": "Modelo de IA",
+    "model_desc": "Detalles técnicos y arquitectura del modelo de IA utilizado para el análisis de imágenes médicas.",
+    "api": "API y Endpoints",
+    "api_desc": "Endpoints disponibles para integrar diagnósticos asistidos por IA en otros sistemas.",
+    "documentation": "Documentación",
+    "documentation_desc": "Documentación completa del proyecto, incluyendo guías de uso y especificaciones técnicas."
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "Si tienes alguna consulta o te gustaría colaborar, puedes contactar por WhatsApp, correo electrónico o a través de GitHub y LinkedIn.",
+    "form": {
+      "title": "Enviar un Mensaje",
+      "name_placeholder": "Tu Nombre",
+      "message_placeholder": "Tu Mensaje",
+      "button": "Enviar por WhatsApp",
+      "error": "Por favor, llena ambos campos antes de enviar."
+    }
+  },
+  "uploaddicom": {
+    "title": "Subir Escaneo de Resonancia Magnética",
+    "description": "Sube un escaneo de resonancia magnética en formato NIfTI (.nii, .nii.gz) o DICOM (.dcm). El modelo de IA lo analizará.",
+    "drag_drop": "Arrastra y suelta un archivo de resonancia magnética (.nii, .nii.gz, .dcm) o haz clic para seleccionarlo.",
+    "invalid_file": "Tipo de archivo no válido. Solo se permiten archivos en formato NIfTI (.nii, .nii.gz) o DICOM (.dcm).",
+    "invalid_nifti": "Archivo NIfTI no válido. Verifica el formato.",
+    "nifti_preview": "Metadatos del Archivo NIfTI",
+    "dimensions": "Dimensiones:",
+    "voxel_size": "Tamaño de Vóxel:",
+    "loading_preview": "Cargando vista previa...",
+    "analyze_button": "Analizar Resonancia Magnética",
+    "analyzing": "Analizando escaneo..."
+  },
+  "about": {
+    "title": "Acerca de MedScope",
+    "image_alt": "Escaneo médico representando el análisis con inteligencia artificial",
+    "description_1": "MedScope es una plataforma experimental impulsada por inteligencia artificial, diseñada para analizar imágenes médicas y asistir en consultas médicas con tecnología avanzada.",
+    "description_2": "A través del aprendizaje profundo, identifica patrones clínicos en estudios de imagen y ofrece respuestas fundamentadas en bases de datos médicas, apoyando la toma de decisiones en entornos de salud.",
+    "disclaimer": "MedScope es una herramienta de apoyo y referencia. No reemplaza la evaluación médica profesional ni emite diagnósticos definitivos. Consulta a un especialista para una valoración precisa."
+  },
   "status": {
     "research": {
       "title": "Investigación en Curso",
-      "desc": "Este proyecto sigue en desarrollo para mejorar la precisión de la IA."
+      "desc": "El modelo de IA se encuentra en desarrollo continuo, mejorando su precisión y capacidad de análisis en entornos médicos."
     },
     "analysis": {
-      "title": "Análisis Asistido por IA",
-      "desc": "MedScope explora el uso de IA en imágenes médicas, pero no es un dispositivo médico."
-    },
-    "experimental": {
-      "title": "Modelo Experimental",
-      "desc": "Aún en pruebas. No es para uso clínico. Consulta a un médico si tienes síntomas."
+      "title": "Evaluación Asistida por IA",
+      "desc": "MedScope emplea aprendizaje profundo para detectar patrones en imágenes médicas. Su uso es solo referencial y no sustituye un diagnóstico clínico."
     },
     "consultation": {
-      "title": "Consulta Profesional",
-      "desc": "Para un diagnóstico preciso, consulta a un médico certificado."
+      "title": "Supervisión Requerida",
+      "desc": "Para obtener una evaluación precisa, consulta con un profesional de la salud. MedScope es solo una herramienta de apoyo en la investigación médica."
     }
   },
-
   "settings": {
     "title": "Configuración",
     "user_mode": "Modo de Usuario",
     "dark_mode": "Modo Oscuro",
     "language": "Idioma",
-    "clear_history": "Borrar Historial Médico"
+    "clear_history": "Borrar todas las consultas médicas"
   },
-
   "user_modes": {
     "patient_mode": "Paciente",
     "doctor_mode": "Médico"
+  },
+  "ai_tools": {
+    "title": "Herramientas de Diagnóstico con IA",
+    "description": "Selecciona una herramienta para analizar imágenes médicas con inteligencia artificial y detectar posibles anomalías."
+  },
+  "aiTools": {
+    "melanoma": {
+      "title": "Detección de Melanoma",
+      "description": "Análisis de imágenes cutáneas con IA para la detección temprana del cáncer de piel."
+    },
+    "covid": {
+      "title": "Diagnóstico de Neumonía y COVID-19",
+      "description": "Evaluación de radiografías de tórax para identificar neumonía y COVID-19."
+    },
+    "breast_cancer": {
+      "title": "Análisis de Biopsia de Cáncer de Mama",
+      "description": "Detección temprana de cáncer de mama mediante el análisis de biopsias con IA."
+    },
+    "coming_soon": "En desarrollo",
+    "use_tool": "Iniciar Análisis"
+  },
+  "errors": {
+    "tool_not_found": "Herramienta no encontrada",
+    "missing_fields": "Por favor, completa todos los campos.",
+    "analysis_failed": "El análisis falló. Inténtalo de nuevo.",
+    "invalid_file": "Archivo no válido. Solo se permiten imágenes."
+  },
+  "result": {
+    "malignant": "Maligno (Melanoma)",
+    "benign": "Benigno",
+    "unknown": "Diagnóstico no reconocido",
+    "no_prediction": "No hay datos de predicción disponibles. Sube una imagen y analízala primero."
+  },
+  "diagnosis": {
+    "benign_message": "Esta lesión parece benigna, lo que generalmente no es motivo de preocupación. Sin embargo, se recomiendan chequeos regulares de la piel para una salud general.",
+    "malignant_message": "Esta lesión puede requerir evaluación adicional por parte de un profesional. Aunque la IA proporciona una evaluación, la revisión de un dermatólogo es crucial para un diagnóstico preciso.",
+    "confidence": "Confianza"
+  },
+  "warning": {
+    "message": "Las evaluaciones basadas en IA son solo con fines informativos. Si tienes preocupaciones sobre la salud de tu piel, consulta a un profesional médico calificado."
+  },
+  "analyze_button": {
+    "text": "Analizar otra imagen"
+  },
+  "disclaimer": {
+    "title": "Aviso sobre el uso de MedScope",
+    "message1": "MedScope es una plataforma experimental diseñada para el análisis asistido de imágenes médicas mediante inteligencia artificial.",
+    "important_note": "No sustituye la evaluación de un profesional de la salud.",
+    "message2": "La información proporcionada por la IA debe tomarse solo como referencia. El diagnóstico y tratamiento deben ser realizados por médicos certificados.",
+    "message3": "Al continuar, aceptas que MedScope es un proyecto en desarrollo y que cualquier decisión médica debe basarse en una evaluación profesional.",
+    "regulations": {
+      "title": "Regulaciones y normativas:",
+      "eu_ai": "Reglamento de Inteligencia Artificial (UE)",
+      "mx_health": "Ley General de Salud (México)",
+      "gdpr": "Reglamento General de Protección de Datos (GDPR)"
+    },
+    "accept_button": "Entiendo y acepto"
   }
 }

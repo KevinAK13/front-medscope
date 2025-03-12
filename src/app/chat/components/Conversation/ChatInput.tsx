@@ -45,7 +45,7 @@ export default function ChatInput() {
       
       {/* 📄 Input de Texto */}
       <motion.textarea
-        className={`flex-1 p-3 border border-gray-300 dark:border-gray-700 rounded-md resize-none bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:ring-1 outline-none transition-all ${
+        className={`flex-1 p-3 text-xs border border-gray-300 dark:border-gray-700 rounded-md resize-none bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm focus:ring-1 outline-none transition-all ${
           isRecording ? "border-gray-500 dark:border-gray-600 animate-pulse" : "focus:ring-gray-700 dark:focus:ring-gray-600"
         }`}
         rows={1}
@@ -57,7 +57,7 @@ export default function ChatInput() {
             handleSend();
           }
         }}
-        placeholder={isRecording ? t("listening") : t("placeholder")}
+        placeholder={isRecording ? t("chat.listening") : t("chat.placeholder")}
         disabled={loading}
       />
 

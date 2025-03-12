@@ -17,17 +17,17 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }} 
         animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.6 }}
-        className="w-full max-w-5xl mt-20 lg:mt-10"
+        className="w-full max-w-5xl mt-28 md:mt-28"
       >
         {/* Título profesional */}
-        <h1 className="text-5xl md:text-7xl font-bold leading-tight text-gray-900 dark:text-white">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-900 dark:text-white">
           <span className="bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-500 dark:to-blue-300 text-transparent bg-clip-text">
-          MedicalScope
+          MedScope
           </span>
         </h1>
 
         {/* Descripción breve del proyecto */}
-        <p className="mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-4 text-lg md:text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
           {t("home.description")}
         </p>
       </motion.section>
@@ -59,8 +59,8 @@ export default function Home() {
             className="bg-white dark:bg-gray-800 shadow-lg p-8 rounded-xl flex flex-col items-center transition transform hover:scale-105 hover:shadow-xl"
           >
             {step.icon}
-            <h3 className="text-2xl font-semibold mt-5 text-gray-900 dark:text-white">{step.title}</h3>
-            <p className="text-gray-600 dark:text-gray-300 mt-3 text-lg">{step.desc}</p>
+            <h3 className="text-xl font-semibold mt-5 text-gray-900 dark:text-white">{step.title}</h3>
+            <p className="text-gray-600 dark:text-gray-300 mt-3">{step.desc}</p>
           </motion.div>
         ))}
       </section>

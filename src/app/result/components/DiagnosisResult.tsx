@@ -1,5 +1,6 @@
 import { CheckCircle, AlertTriangle } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next"; // 🔥 Importa useTranslation
 
 interface DiagnosisProps {
   diagnosis: string;
@@ -7,6 +8,7 @@ interface DiagnosisProps {
 }
 
 export default function DiagnosisResult({ diagnosis, confidence }: DiagnosisProps) {
+  const { t } = useTranslation(); // 🔥 Obtén la función de traducción
   const isBenign = diagnosis.toLowerCase().includes("benign");
   const roundedConfidence = confidence.toFixed(2); // Redondea a 2 decimales
 
@@ -22,11 +24,11 @@ export default function DiagnosisResult({ diagnosis, confidence }: DiagnosisProp
 
   const message = isBenign ? (
     <p className="text-gray-600 dark:text-gray-400 mt-4 text-lg leading-relaxed">
-      This lesion appears <span className="font-bold text-green-600 dark:text-green-400">benign</span>, which is usually not a cause for concern. However, regular skin check-ups are always recommended for overall health.
+      {t("diagnosis.benign_message")} {/* 🔥 Traduce el mensaje */}
     </p>
   ) : (
     <p className="text-gray-600 dark:text-gray-400 mt-4 text-lg leading-relaxed">
-      This lesion may require <span className="font-bold text-red-600 dark:text-red-400">further evaluation</span> by a professional. While AI provides an assessment, a dermatologist's review is crucial for an accurate diagnosis.
+      {t("diagnosis.malignant_message")} {/* 🔥 Traduce el mensaje */}
     </p>
   );
 
@@ -42,7 +44,8 @@ export default function DiagnosisResult({ diagnosis, confidence }: DiagnosisProp
         {diagnosis}
       </h2>
       <p className="text-xl font-medium text-gray-700 dark:text-gray-300 mt-2">
-        Confidence: <span className={`font-bold ${confidenceColor}`}>{roundedConfidence}%</span>
+        {t("diagnosis.confidence")}: {/* 🔥 Traduce el texto */}
+        <span className={`font-bold ${confidenceColor}`}>{roundedConfidence}%</span>
       </p>
       {message}
     </motion.div>

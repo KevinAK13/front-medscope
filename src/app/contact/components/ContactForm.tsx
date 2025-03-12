@@ -19,14 +19,14 @@ export default function Contact() {
         initial={{ opacity: 0, y: 20 }} 
         animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.6 }}
-        className="w-full max-w-4xl mt-20 lg:mt-10"
+        className="w-full max-w-4xl mt-20 lg:mt-32"
       >
-        <h1 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900 dark:text-white">
+        <h1 className="text-5xl md:text-5xl font-bold leading-tight text-gray-900 dark:text-white">
           <span className="bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-500 dark:to-blue-300 text-transparent bg-clip-text">
             {t("contact.title")}
           </span>
         </h1>
-        <p className="mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-4 text-lg md:text-base text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
           {t("contact.description")}
         </p>
       </motion.section>

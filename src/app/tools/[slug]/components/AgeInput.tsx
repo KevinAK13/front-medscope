@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next"; // 🔥 Importa useTranslation
 
 interface AgeInputProps {
   age: string;
@@ -9,6 +10,7 @@ interface AgeInputProps {
 
 export default function AgeInput({ age, setAge }: AgeInputProps) {
   const [isFocused, setIsFocused] = useState(false);
+  const { t } = useTranslation(); // 🔥 Obtén la función de traducción
 
   return (
     <div className="relative w-full">
@@ -21,7 +23,7 @@ export default function AgeInput({ age, setAge }: AgeInputProps) {
             setAge(rawValue); // Se envía la edad sin normalizar
           }
         }}
-        placeholder="Enter your age (0 - 120)"
+        placeholder={t("age_input.placeholder")} // 🔥 Traduce el placeholder
         className={`mt-1 p-3 border w-full rounded-lg dark:bg-gray-700 dark:text-white focus:outline-none transition-all ${
           isFocused ? "border-blue-500 shadow-md" : "border-gray-300 dark:border-gray-600"
         }`}
